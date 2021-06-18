@@ -1,0 +1,76 @@
+/* General Styles START */
+*, *::before, *::after
+{
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+html, body
+{
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    font-size: 100%; /* To set the rem equal to any browser's default font-size */
+}
+
+body
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.btn /* For all the website's buttons */
+{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.67em;
+    font-weight: bold;
+    outline: none;
+}
+
+.img
+{
+
+}
+/* General Styles END */
+
+
+/* Header Styles START */
+/* Header Styles END */
+
+
+/* Footer Styles START */
+/* Footer Styles END */
+
+
+/* index.html Styles START */
+/* index.html Styles END */
+
+
+/* about.html Styles START */
+/* about.html Styles END */
+
+
+/* contact.html Styles START */
+/* contact.html Styles END */
+
+
+/* login.html Styles START */
+/* login.html Styles END */
+
+
+/* shop.html Styles START */
+/* shop.html Styles END */
+
+
+/* Media Styles START */
+/* Media Styles END */
