@@ -43,15 +43,19 @@ a
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center center;
 }
 
 .container
 {
     width: 100%;
-    max-width: 62.5rem;
     margin: 0 auto;
+}
+
+.item-title
+{
+
 }
 /* General Styles END */
 
@@ -138,22 +142,71 @@ header
     text-align: center;
 }
 
-.cta-container
+.cta-container, .men-cta-img, .women-cta-img
 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.men-cta-img, .women-cta-img
+{
+    flex-direction: column;
+}
+
+.cta-container
+{
+    height: 100vh;
+}
+
 .men-cta-img
 {
-    background-image: url();
+    background-image: url(Images/cta-mens.jpg);
 }
 
 .women-cta-img
 {
-    background-image: url();
+    background-image: url(Images/cta-women.jpg);
 }
+
+.cta-title, .cta-subtitle, .btn-cta
+{
+    color: white;
+}
+
+.cta-title
+{
+    margin-bottom: 1rem;
+}
+
+.cta-subtitle
+{
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-cta
+{
+    background: transparent;
+    border: 3px solid white;
+}
+
+.btn-cta:hover
+{
+    background: rgba(255, 255, 255, 0.281);
+}
+
+.popular-items
+{
+
+}
+
+.popular-items-container
+{
+
+}
+
+
 /* index.html Styles END */
 
 
