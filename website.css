@@ -40,8 +40,6 @@ a
 
 .img
 {
-    width: 100%;
-    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -54,6 +52,24 @@ a
 }
 
 .item-title
+{
+
+}
+
+.item-price
+{
+
+}
+
+.section-title
+{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: darkgrey;
+    text-align: center;
+}
+
+.btn-add-to-cart
 {
 
 }
@@ -151,6 +167,8 @@ header
 
 .men-cta-img, .women-cta-img
 {
+    width: 100%;
+    height: 100%;
     flex-direction: column;
 }
 
@@ -198,15 +216,63 @@ header
 
 .popular-items
 {
+    padding: 0.5rem 1rem;
+}
 
+.popular-items-container, .popular-items-wrapper, .popular-item
+{
+    display: flex;
+    align-items: center;
+}
+
+.popular-items-container, .popular-item
+{
+    flex-direction: column;
 }
 
 .popular-items-container
 {
-
+    justify-content: space-between;
+    width: 50vw;
 }
 
+.popular-items-wrapper, .popular-item
+{
+    justify-content: center;
+}
 
+.popular-items-wrapper
+{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.popular-item
+{
+    width: 33.33%;
+    height: 50vh;
+}
+
+.popular-item-img
+{
+    width: 100%;
+    height: 45%;
+}
+
+.popular-item-img-1
+{
+    background-image: url();
+}
+
+.popular-item-img-2
+{
+    background-image: url();
+}
+
+.popular-item-img-3
+{
+    background-image: url();
+}
 /* index.html Styles END */
 
 
