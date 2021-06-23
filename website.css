@@ -41,7 +41,6 @@ a
 .img
 {
     background-repeat: no-repeat;
-    background-size: cover;
     background-position: center center;
 }
 
@@ -53,12 +52,20 @@ a
 
 .item-title
 {
-
+    text-transform: uppercase;
+    color: ;
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: ;
 }
 
 .item-price
 {
-
+    color: ;
+    font-size: ;
+    text-align: center;
+    margin-bottom: ;
 }
 
 .section-title
@@ -170,6 +177,7 @@ header
     width: 100%;
     height: 100%;
     flex-direction: column;
+    background-size: cover;
 }
 
 .cta-container
@@ -216,7 +224,7 @@ header
 
 .popular-items
 {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
 }
 
 .popular-items-container, .popular-items-wrapper, .popular-item
@@ -232,11 +240,10 @@ header
 
 .popular-items-container
 {
-    justify-content: space-between;
-    width: 50vw;
+    width: 80vw;
 }
 
-.popular-items-wrapper, .popular-item
+.popular-items-wrapper, .popular-item, .popular-items-container
 {
     justify-content: center;
 }
@@ -249,29 +256,35 @@ header
 
 .popular-item
 {
-    width: 33.33%;
-    height: 50vh;
+    width: 33%;
+    height: 70vh;
+}
+
+.popular-item + .popular-item
+{
+    margin-left: 1.25rem;
 }
 
 .popular-item-img
 {
     width: 100%;
-    height: 45%;
+    height: 55%;
+    background-size: cover;
 }
 
 .popular-item-img-1
 {
-    background-image: url();
+    background-image: url(Images/mens-green-tux.jpg);
 }
 
 .popular-item-img-2
 {
-    background-image: url();
+    background-image: url(Images/floral-almond-toe-pumps.jpg);
 }
 
 .popular-item-img-3
 {
-    background-image: url();
+    background-image: url(Images/green-sleeveless-dress.jpg);
 }
 /* index.html Styles END */
 
