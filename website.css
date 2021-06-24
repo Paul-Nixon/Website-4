@@ -1,4 +1,4 @@
-/* General Styles START */
+/* Global Styles START */
 *, *::before, *::after
 {
     box-sizing: border-box;
@@ -53,34 +53,44 @@ a
 .item-title
 {
     text-transform: uppercase;
-    color: ;
+    color: #333;
     font-size: 1rem;
     line-height: 1.4;
     text-align: center;
-    margin-bottom: ;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .item-price
 {
-    color: ;
-    font-size: ;
+    color: goldenrod;
+    font-size: 1.125rem;
     text-align: center;
-    margin-bottom: ;
+    margin-bottom: 1rem;
+    font-weight: 550;
 }
 
 .section-title
 {
     text-transform: uppercase;
-    font-size: 1.5rem;
-    color: darkgrey;
+    font-size: 2rem;
+    color: rgb(131, 127, 127);
     text-align: center;
 }
 
 .btn-add-to-cart
 {
-
+    background-color: #a17f1a;
+    color: white;
+    font-size: 1.125rem;
+    border: 0;
 }
-/* General Styles END */
+
+.btn-add-to-cart:hover
+{
+    background-color: #e6b31a;
+}
+/* Global Styles END */
 
 
 /* Header Styles START */
@@ -222,7 +232,7 @@ header
     background: rgba(255, 255, 255, 0.281);
 }
 
-.popular-items
+.popular-items, .shop-by-category
 {
     padding: 0.5rem;
 }
@@ -285,6 +295,40 @@ header
 .popular-item-img-3
 {
     background-image: url(Images/green-sleeveless-dress.jpg);
+}
+
+.shop-by-category-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-container
+{
+    display: grid;
+    grid-template-columns: repeat(2, 31.25rem);
+    grid-template-rows: repeat(4, 31.25rem);
+    column-gap: ;
+    row-gap: ;
+    justify-content: center;
+    align-items: center;
+}
+
+.card
+{
+
+}
+
+.card-img
+{
+
+}
+
+.card-title
+{
+    
 }
 /* index.html Styles END */
 
