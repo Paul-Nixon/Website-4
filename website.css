@@ -72,10 +72,23 @@ a
 
 .section-title
 {
+    position: relative;
     text-transform: uppercase;
     font-size: 2rem;
     color: rgb(131, 127, 127);
     text-align: center;
+}
+
+.section-title::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.3125rem;
+    background: rgb(131, 127, 127);
+    left: 0;
+    right: 0;
+    bottom: -0.625rem;
 }
 
 .btn-add-to-cart
@@ -166,6 +179,10 @@ header
 
 
 /* Footer Styles START */
+footer
+{
+    
+}
 /* Footer Styles END */
 
 
@@ -308,27 +325,80 @@ header
 .cards-container
 {
     display: grid;
-    grid-template-columns: repeat(2, 31.25rem);
-    grid-template-rows: repeat(4, 31.25rem);
-    column-gap: ;
-    row-gap: ;
+    grid-template-columns: repeat(4, 18.75rem);
+    grid-template-rows: repeat(2, 18.75rem);
+    column-gap: 0.9375rem;
+    row-gap: 0.9375rem;
     justify-content: center;
     align-items: center;
 }
 
 .card
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 18.75rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
 
+.card:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .card-img
 {
-
+    width: 100%;
+    height: 80%;
+    background-size: cover;
 }
 
 .card-title
 {
-    
+    color: black;
+    text-align: center;
+}
+
+.card-img-1
+{
+    background-image: url(Images/mens-brown-leather-loafers.jpg);
+}
+
+.card-img-2
+{
+    background-image: url(Images/womens-brown-leather-peep-toe-heeled-shoes.jpg);
+}
+
+.card-img-3
+{
+    background-image: url(Images/brown-tux.jpg);
+}
+
+.card-img-4
+{
+    background-image: url(Images/floral-tube-dress.jpg);
+}
+
+.card-img-5
+{
+    background-image: url(Images/mens-blue-denim-jeans.jpg);
+}
+
+.card-img-6
+{
+    background-image: url(Images/women-blue-denim-jeans-1.jpg);
+}
+
+.card-img-7
+{
+    background-image: url(Images/mens-plain-grey-shirt.jpg);
+}
+
+.card-img-8
+{
+    background-image: url(Images/women-white-buttoned-shirt.jpg);
 }
 /* index.html Styles END */
 
