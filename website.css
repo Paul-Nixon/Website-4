@@ -181,7 +181,42 @@ header
 /* Footer Styles START */
 footer
 {
-    
+    background-color: #333;
+    padding: 3.125rem 0;
+}
+
+.row
+{
+    display: flex;
+}
+
+.footer-col
+{
+    width: 25%;
+    padding: 0 0.9375rem;
+}
+
+.footer-col h4
+{
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+
+.footer-col ul
+{
+    list-style-type: none;
+}
+
+.footer-col ul a
+{
+    color: white;
+    font-size: ;
+}
+
+.footer-col ul a:hover
+{
+
 }
 /* Footer Styles END */
 
