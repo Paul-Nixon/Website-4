@@ -182,12 +182,14 @@ header
 footer
 {
     background-color: #333;
-    padding: 3.125rem 0;
+    padding: 4.375rem 0;
+    margin-top: auto;
 }
 
 .row
 {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .footer-col
@@ -205,18 +207,42 @@ footer
 
 .footer-col ul
 {
-    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-col ul li, .footer-social-links
+{
+    text-align: center;
+}
+
+.footer-col ul li + li
+{
+    margin-top: 0.625rem;
 }
 
 .footer-col ul a
 {
     color: white;
-    font-size: ;
+    font-size: 1.125rem;
 }
 
-.footer-col ul a:hover
+.footer-col ul a:hover, .footer-social-links .fa:hover
 {
+    opacity: 0.6;
+}
 
+.footer-social-links .fa
+{
+    border-radius: 50%;
+    font-size: 1.5625rem;
+    color: white;
+}
+
+.footer-social-links .fa + .fa
+{
+    margin-left: 0.625rem;
 }
 /* Footer Styles END */
 
@@ -349,6 +375,11 @@ footer
     background-image: url(Images/green-sleeveless-dress.jpg);
 }
 
+.popular-items, .shop-by-category
+{
+    padding: 1.875rem 0.625rem;
+}
+
 .shop-by-category-container
 {
     display: flex;
@@ -439,6 +470,54 @@ footer
 
 
 /* about.html Styles START */
+.about-section
+{
+    padding: ;
+}
+
+.about-container
+{
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.about-container .section-title
+{
+
+}
+
+.about-grid
+{
+    display: grid;
+    grid-template-columns: repeat(2, 12.5rem);
+    grid-template-rows: repeat(2, 12.5rem);
+    column-gap: ;
+    row-gap: ;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container, .about-content-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content-wrapper
+{
+    justify-content: center;
+}
+
+.about-content-wrapper h3
+{
+
+}
+
+.about-pg
+{
+
+}
 /* about.html Styles END */
 
 
