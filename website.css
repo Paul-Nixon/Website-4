@@ -26,7 +26,7 @@ a
     text-decoration: none;
 }
 
-.btn /* For all the website's buttons */
+.btn
 {
     display: inline-block;
     vertical-align: middle;
@@ -472,7 +472,7 @@ footer
 /* about.html Styles START */
 .about-section
 {
-    padding: ;
+    padding: 1.875rem 0.625rem;
 }
 
 .about-container
@@ -489,10 +489,10 @@ footer
 .about-grid
 {
     display: grid;
-    grid-template-columns: repeat(2, 12.5rem);
-    grid-template-rows: repeat(2, 12.5rem);
-    column-gap: ;
-    row-gap: ;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 15.625rem);
+    column-gap: 0.625rem;
+    row-gap: 0.625rem;
     justify-content: center;
     align-items: center;
 }
@@ -511,12 +511,19 @@ footer
 
 .about-content-wrapper h3
 {
-
+    text-transform: capitalize;
+    font-size: ;
+    color: rgb(131, 127, 127);
+    margin: 0 0 0.5rem;
 }
 
 .about-pg
 {
-
+    line-height: ;
+    font-size: 1rem;
+    color: ;
+    text-align: left;
+    margin: 0;
 }
 /* about.html Styles END */
 
