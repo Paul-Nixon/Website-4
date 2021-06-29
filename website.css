@@ -472,58 +472,57 @@ footer
 /* about.html Styles START */
 .about-section
 {
-    padding: 1.875rem 0.625rem;
+    padding: 1rem;
 }
 
 .about-container
 {
-    justify-content: space-between;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
 }
 
 .about-container .section-title
 {
-
+    width: 100%;
+    text-align: left;
 }
 
-.about-grid
-{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 15.625rem);
-    column-gap: 0.625rem;
-    row-gap: 0.625rem;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-container, .about-content-wrapper
+.about-content-wrapper, .about-content
 {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .about-content-wrapper
 {
-    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
-.about-content-wrapper h3
+.about-content + .about-content
+{
+    margin-top: 1.25rem;
+}
+
+.about-content h3
 {
     text-transform: capitalize;
-    font-size: ;
+    font-size: 1.5625rem;
     color: rgb(131, 127, 127);
     margin: 0 0 0.5rem;
 }
 
 .about-pg
 {
-    line-height: ;
+    line-height: 1.4;
     font-size: 1rem;
-    color: ;
     text-align: left;
     margin: 0;
+    padding: 0;
 }
 /* about.html Styles END */
 
