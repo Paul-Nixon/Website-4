@@ -171,7 +171,7 @@ a
 {
     color: white;
     float: right;
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -183,7 +183,7 @@ a
 
 .modal-header, .modal-body, .modal-footer
 {
-    padding: 2px 16px;
+    padding: 0.625rem 1rem;
 }
 
 .modal-header, .modal-footer
@@ -199,19 +199,42 @@ a
     align-items: center;
 }
 
-.modal-btn
+.btn-modal
 {
     font-size: 1.25em;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: brown;
+    background-color: ;
     color: white;
     border: 3px solid #98ff98;
 }
 
-.modal-btn:hover
+.btn-modal:hover
 {
-    background-color: rgb(138, 33, 33);
+    background-color: transparent;
+}
+
+.input-wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper + .input-wrapper
+{
+    margin-top: 1rem;
+}
+
+.input-wrapper label
+{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.modal-input
+{
+    padding: 0.25rem;
+    border-radius: 0.1875rem;
 }
 /* Modal Styles END */
 
