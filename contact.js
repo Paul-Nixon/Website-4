@@ -29,7 +29,7 @@ function renderModal()
 
         <div class="modal-body">
             <div class="input-wrapper">
-                <label>Your email address</label>
+                <label class="required">Your email address</label>
                 <input type="text" class="modal-input" id="email-input">
                 <div class="email-error-text">
                     The email field either is empty or doesn't contain "@" or ".com."
@@ -50,14 +50,14 @@ function renderModal()
             </div>
 
             <div class="input-wrapper">
-                <label>Subject</label>
+                <label class="required">Subject</label>
                 <input type="text" class="modal-input" id="subject-input">
                 <div class="subject-error-text">The text field is empty.</div>
             </div>
 
             <div class="input-wrapper">
-                <label>Tell us more</label>
-                <textarea class="modal-input" cols="30" rows="10" id="textarea-input"></textarea>
+                <label class="required">Tell us more</label>
+                <textarea class="modal-input" cols="15" rows="5" id="textarea-input"></textarea>
                 <div class="textarea-error-text">The textarea is empty.</div>
             </div>
         </div>
@@ -78,6 +78,9 @@ function renderModal()
     };
 
     //
+    assignOnChangeEventsToModalInputs();
+
+    // 
     document.querySelector(".btn-submit").addEventListener("click", renderConfirmationMessage);
 }
 
@@ -90,6 +93,11 @@ function renderConfirmationMessage()
     if (noInvalidInputs)
     {
         //
+        let modal = document.querySelector(".modal");
+        modal.querySelector(".btn-submit").style.display = "none";
+        modal.querySelector(".modal-body").innerHTML = ``;
+        modal.querySelector(".modal-body").innerHTML = `
+        <p>Your message has been sent! Click outside this window or the button at the top right to close it.</p>`;
     }
 }
 
@@ -123,4 +131,45 @@ function verifyInputs()
     }
 
     return noInvalidInputs;
+}
+
+
+function assignOnChangeEventsToModalInputs()
+{
+    document.querySelector("#email-input").onchange = (event) => {
+        if (parseInt(event.target.value.length) === 0 || (!event.target.value.includes("@") || !event.target.value.includes(".com")))
+        {
+            event.target.style.borderColor = "red";
+            document.querySelector(".email-error-text").style.display = "block";
+        }
+        else
+        {
+            event.target.style.borderColor = "black";
+            document.querySelector(".email-error-text").style.display = "none";
+        }
+    }
+    document.querySelector("#subject-input").onchange = (event) => {
+        if (parseInt(event.target.value.length) === 0)
+        {
+            event.target.style.borderColor = "red";
+            document.querySelector(".subject-error-text").style.display = "block";
+        }
+        else
+        {
+            event.target.style.borderColor = "black";
+            document.querySelector(".subject-error-text").style.display = "none";
+        }
+    }
+    document.querySelector("#textarea-input").onchange = (event) => {
+        if (parseInt(event.target.value.length) === 0)
+        {
+            event.target.style.borderColor = "red";
+            document.querySelector(".textarea-error-text").style.display = "block";
+        }
+        else
+        {
+            event.target.style.borderColor = "black";
+            document.querySelector(".textarea-error-text").style.display = "none";
+        }
+    }
 }
