@@ -183,7 +183,7 @@ a
 
 .modal-header, .modal-body, .modal-footer
 {
-    padding: 0.625rem 1rem;
+    padding: 0.625rem;
 }
 
 .modal-header, .modal-footer
@@ -204,7 +204,6 @@ a
     font-size: 1.25em;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: ;
     color: white;
     border: 3px solid #98ff98;
 }
@@ -231,10 +230,24 @@ a
     margin-bottom: 0.5rem;
 }
 
+.input-wrapper label::after
+{
+    content: "*";
+    color: red;
+}
+
 .modal-input
 {
     padding: 0.25rem;
     border-radius: 0.1875rem;
+    border: 1px solid black;
+    outline: none;
+}
+
+.email-error-text, .subject-error-text, .textarea-error-text
+{
+    color: red;
+    display: none;
 }
 /* Modal Styles END */
 
