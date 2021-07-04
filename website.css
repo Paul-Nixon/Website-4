@@ -347,7 +347,7 @@ header
 /* Footer Styles START */
 footer
 {
-    background-color: #333;
+    background-color: black;
     padding: 4.375rem 0;
     margin-top: auto;
 }
@@ -754,11 +754,124 @@ footer
 
 
 /* login.html Styles START */
+.login-section
+{
+    padding: 3.125rem;
+    background-color: #333;
+}
 
+.login-container
+{
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+}
+
+.login-container, .login-wrapper, .register-wrapper, .login-form, .register-form, .input-wrapper
+{
+    display: flex;
+    align-items: center;
+}
+
+.login-wrapper .section-title::before, .register-wrapper .section-title::before
+{
+    content: "";
+    display: none;
+}
+
+.login-form, .register-form, .login-wrapper, .register-wrapper, .input-wrapper
+{
+    flex-direction: column;
+}
+
+.login-wrapper, .register-wrapper, .login-form, .register-form, .input-wrapper, .btn-login, .btn-register
+{
+    width: 50%;
+}
+
+.login-wrapper .section-title, .register-wrapper .section-title, .login-form, .register-form, .input-wrapper label, .btn-login, .btn-register, .input-wrapper input, .login-wrapper, .register-wrapper, .input-wrapper, .forgot-password-link
+{
+    align-self: flex-start;
+}
+
+.forgot-password-link:hover
+{
+    text-decoration: underline;
+}
+
+.btn-login, .btn-register
+{
+    background-color: white;
+    border-radius: 0.1875rem;
+    margin-top: 1.875rem;
+    border: 2px solid white;
+    padding: 1rem 0;
+    transition: background-color 300ms ease-in-out;
+    font-size: 1.125rem;
+}
+
+.btn-login
+{
+    margin-bottom: 1rem;
+}
+
+.btn-login:hover, .btn-register:hover
+{
+    background-color: transparent;
+    color: white;
+}
+
+.input-wrapper label, .forgot-password-link
+{
+    text-transform: uppercase;
+}
+
+.input-wrapper label
+{
+    margin-bottom: 0.5rem;
+}
+
+.input-wrapper + .input-wrapper
+{
+    margin-top: 1.25rem;
+}
+
+.login-form, .register-form, .input-wrapper input
+{
+    width: 100%;
+}
+
+.input-wrapper input
+{
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.login-wrapper .section-title, .register-wrapper .section-title, .input-wrapper label, .forgot-password-link
+{
+    color: white;
+}
+
+.login-wrapper, .register-wrapper
+{
+    padding-top: 1.875rem;
+}
+
+.login-wrapper .section-title, .register-wrapper .section-title
+{
+    font-size: 1.5625rem;
+    margin-bottom: 1.5625rem;
+}
+
+.input-wrapper label
+{
+    font-size: 0.875rem;
+}
 /* login.html Styles END */
 
 
 /* mens.html Styles START */
+
 /* mens.html Styles END */
 
 
