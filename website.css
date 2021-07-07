@@ -605,7 +605,7 @@ footer
 
 .card-img-3
 {
-    background-image: url(Images/brown-tux.jpg);
+    background-image: url(Images/black-tux.jpg);
 }
 
 .card-img-4
@@ -870,7 +870,7 @@ footer
 
 
 /* mens.html Styles START */
-.mens-shoes, .tuxedos-section, .mens-shirts, .mens-pants
+.mens-shoes, .suits-section, .mens-shirts, .mens-pants
 {
     padding: ;
 }
@@ -923,97 +923,97 @@ footer
 
 .mens-shoes-img-5
 {
-    background-image: url();
+    background-image: url(Images/brown-ecco-shoes.jpg);
 }
 
 .mens-shoes-img-6
 {
-    background-image: url();
+    background-image: url(Images/red-nikes.jpg);
 }
 
-.tuxedos-img-1
+.suits-img-1
 {
-    background-image: url();
+    background-image: url(Images/mens-green-tux.jpg);
 }
 
-.tuxedos-img-2
+.suits-img-2
 {
-    background-image: url();
+    background-image: url(Images/black-tux.jpg);
 }
 
-.tuxedos-img-3
+.suits-img-3
 {
-    background-image: url();
+    background-image: url(Images/grey-plaid-suit.jpg);
 }
 
-.tuxedos-img-4
+.suits-img-4
 {
-    background-image: url();
+    background-image: url(Images/blue-suit.jpg);
 }
 
-.tuxedos-img-5
+.suits-img-5
 {
-    background-image: url();
+    background-image: url(Images/black-suit-2.jpg);
 }
 
-.tuxedos-img-6
+.suits-img-6
 {
-    background-image: url();
+    background-image: url(Images/grey-suit-2.jpg);
 }
 
 .mens-pants-img-1
 {
-    background-image: url();
+    background-image: url(Images/mens-blue-denim-jeans.jpg);
 }
 
 .mens-pants-img-2
 {
-    background-image: url();
+    background-image: url(Images/light-blue-acne-jeans.jpg);
 }
 
 .mens-pants-img-3
 {
-    background-image: url();
+    background-image: url(Images/dark-blue-acne-jeans.jpg);
 }
 
 .mens-pants-img-4
 {
-    background-image: url();
+    background-image: url(Images/mens-black-pants.jpg);
 }
 
 .mens-pants-img-5
 {
-    background-image: url();
+    background-image: url(Images/mens-brown-jeans.jpg);
 }
 
 .mens-pants-img-6
 {
-    background-image: url();
+    background-image: url(Images/mens-blue-denim-jeans-2.jpg);
 }
 
 .mens-shirts-img-1
 {
-    background-image: url();
+    background-image: url(Images/maroon-polo-shirt.jpg);
 }
 
 .mens-shirts-img-2
 {
-    background-image: url();
+    background-image: url(Images/mens-plain-grey-shirt.jpg);
 }
 
 .mens-shirts-img-3
 {
-    background-image: url();
+    background-image: url(Images/white-crewneck-t-shirt.jpg);
 }
 
 .mens-shirts-img-4
 {
-    background-image: url();
+    background-image: url(Images/blue-dress-shirt.jpg);
 }
 
 .mens-shirts-img-5
 {
-    background-image: url();
+    background-image: url(Images/white-dress-shirt.jpg);
 }
 
 .mens-shirts-img-6
