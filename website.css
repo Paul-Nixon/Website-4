@@ -103,6 +103,33 @@ a
 {
     background-color: #e6b31a;
 }
+
+.shop-container
+{
+    display: grid;
+    grid-template-columns: repeat(3, 18.75rem);
+    grid-template-rows: repeat(2, 18.75rem);
+    row-gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.shop-items-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.shop-item-img
+{
+    width: 100%;
+    height: 55%;
+    background-size: cover;
+}
 /* Global Styles END */
 
 
@@ -872,33 +899,16 @@ footer
 /* mens.html Styles START */
 .mens-shoes, .suits-section, .mens-shirts, .mens-pants
 {
-    padding: ;
+    padding: 2.5rem 1.875rem;
 }
 
-.shop-container
-{
-    display: grid;
-    grid-template-columns: repeat(3, 18.75rem);
-    grid-template-rows: repeat(2, 18.75rem);
-    column-gap: 0.9375rem;
-    row-gap: 0.9375rem;
-    justify-content: center;
-    align-items: center;
-}
 
-.shop-items-wrapper
+.mens-container
 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.shop-img
-{
-    width: 100%;
-    height: 55%;
-    background-size: cover;
 }
 
 .mens-shoes-img-1
@@ -1018,12 +1028,144 @@ footer
 
 .mens-shirts-img-6
 {
-    background-image: url();
+    background-image: url(Images/mens-plain-grey-shirt-2.jpg);
 }
 /* mens.html Styles END */
 
 
 /* women.html Styles START */
+.womens-shoes, .dresses-section, .womens-pants, .womens-shirts
+{
+    padding: 2.5rem 1.875rem;
+}
+
+.womens-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.womens-shoes-img-1
+{
+    background-image: url(Images/floral-almond-toe-pumps.jpg);
+}
+
+.womens-shoes-img-2
+{
+    background-image: url(Images/brown-leather-peep-toe-heeled-shoes.jpg);
+}
+
+.womens-shoes-img-3
+{
+    background-image: url();
+}
+
+.womens-shoes-img-4
+{
+    background-image: url();
+}
+
+.womens-shoes-img-5
+{
+    background-image: url();
+}
+
+.womens-shoes-img-6
+{
+    background-image: url();
+}
+
+.dresses-img-1
+{
+    background-image: url();
+}
+
+.dresses-img-2
+{
+    background-image: url();
+}
+
+.dresses-img-3
+{
+    background-image: url();
+}
+
+.dresses-img-4
+{
+    background-image: url();
+}
+
+.dresses-img-5
+{
+    background-image: url();
+}
+
+.dresses-img-6
+{
+    background-image: url();
+}
+
+.womens-pants-img-1
+{
+    background-image: url();
+}
+
+.womens-pants-img-2
+{
+    background-image: url();
+}
+
+.womens-pants-img-3
+{
+    background-image: url();
+}
+
+.womens-pants-img-4
+{
+    background-image: url();
+}
+
+.womens-pants-img-5
+{
+    background-image: url();
+}
+
+.womens-pants-img-6
+{
+    background-image: url();
+}
+
+.womens-shirts-img-1
+{
+    background-image: url();
+}
+
+.womens-shirts-img-2
+{
+    background-image: url();
+}
+
+.womens-shirts-img-3
+{
+    background-image: url();
+}
+
+.womens-shirts-img-4
+{
+    background-image: url();
+}
+
+.womens-shirts-img-5
+{
+    background-image: url();
+}
+
+.womens-shirts-img-6
+{
+    background-image: url();
+}
 /* women.html Styles END */
 
 
