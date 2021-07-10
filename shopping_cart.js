@@ -22,7 +22,9 @@ function ready()
     }
 
     //
-    document.querySelectorAll(".btn-add-to-cart").addEventListener("click", addToCart);
+    document.querySelectorAll(".btn-add-to-cart").forEach(btn => {
+        btn.addEventListener("click", addToCart);
+    });
 }
 
 
