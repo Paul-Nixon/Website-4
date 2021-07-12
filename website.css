@@ -356,17 +356,37 @@ header
 .login-and-cart-wrapper
 {
     padding-right: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.login-and-cart-wrapper a
+.login-link
 {
-    font-size: 1rem;
     color: black;
+    margin-right: 0.5rem;
 }
 
-.login-and-cart-wrapper a + a
+.cart-link
 {
-    margin-left: 0.625rem;
+    color: black;
+    padding: 0.5rem;
+}
+
+.shopping-cart:hover .cart-link
+{
+    background-color: black;
+    color: white;
+}
+
+.shopping-cart-dropdown-menu
+{
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 9.375rem;
+    z-index: 1;
+    text-transform: uppercase;
 }
 /* Header Styles END */
 
@@ -1167,6 +1187,14 @@ footer
     background-image: url(Images/white-floral-blouse.jpg);
 }
 /* women.html Styles END */
+
+
+/* cart.html Styles START */
+/* cart.html Styles END */
+
+
+/* checkout.html Styles START */
+/* checkout.html Styles END */
 
 
 /* Media Styles START */

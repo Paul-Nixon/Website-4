@@ -25,33 +25,44 @@ function ready()
     document.querySelectorAll(".btn-add-to-cart").forEach(btn => {
         btn.addEventListener("click", addToCart);
     });
+    document.querySelector(".shopping-cart").addEventListener("mouseover", () => {
+        document.querySelector(".shopping-cart-dropdown-menu").style.display = "block";
+        renderCartModal();
+    });
 }
 
 
 function addToCart(event)
 {
-    // 
-    let itemImg = event.target.parentElement.querySelector(".shop-item-img").style.backgroundImage;
-    let itemName = event.target.parentElement.querySelector(".item-title").innerText;
-    let itemPrice = event.target.parentElement.querySelector(".item-price").innerText;
-    let newItem = 
-    {
-        image: itemImg,
-        name: itemName,
-        price: itemPrice
-    };
-
     //
-    let oldCart = JSON.parse(sessionStorage.getItem("cart"));
-    let newItemKeyName = "item" + (Object.keys(oldCart).length + 1);
-    let newCart = Object.assign(oldCart, {newItemKeyName: newItem});
-    sessionStorage.setItem("cart", JSON.stringify(newCart));
+    if (itemExistsInCart())
+    {
+        //
+    }
+    else
+    {
+        let itemImg = event.target.parentElement.querySelector(".shop-item-img").style.backgroundImage;
+        let itemName = event.target.parentElement.querySelector(".item-title").innerText;
+        let itemPrice = event.target.parentElement.querySelector(".item-price").innerText;
+        let newCartItem = 
+        {
+            image: itemImg,
+            name: itemName,
+            price: itemPrice
+        };
+
+        //
+        let oldCart = JSON.parse(sessionStorage.getItem("cart"));
+        let newCartItemKeyName = "item" + (Object.keys(oldCart).length + 1);
+        let newCart = Object.assign(oldCart, {newCartItemKeyName: newCartItem});
+        sessionStorage.setItem("cart", JSON.stringify(newCart));
+    }
 }
 
 
 function clearCart()
 {
-    sessionStorage.removeItem("cart");
+    sessionStorage.setItem("cart", JSON.stringify({}));
 }
 
 
@@ -65,8 +76,27 @@ function itemExistsInCart(itemName)
     else
     {
         //
-        Object.keys(JSON.parse(sessionStorage.getItem("cart"))).forEach(item => {
+        let cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+        for (cartItem of cartItems)
+        {
+            if (cartItem.name === itemName)
+            {
+                return true;
+            }
+        }
+    }
+}
 
-        });
+
+function renderCartModal()
+{
+    //
+    if (Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length == 0)
+    {
+        // 
+    }
+    else
+    {
+        //
     }
 }
