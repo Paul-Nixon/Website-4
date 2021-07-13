@@ -18,7 +18,7 @@ function ready()
     }
     else
     {
-        //
+        loadCart();
     }
 
     //
@@ -27,7 +27,9 @@ function ready()
     });
     document.querySelector(".shopping-cart").addEventListener("mouseover", () => {
         document.querySelector(".shopping-cart-dropdown-menu").style.display = "block";
-        renderCartModal();
+    });
+    document.querySelector(".shopping-cart").addEventListener("mouseout", () => {
+        document.querySelector(".shopping-cart-dropdown-menu").style.display = "none";
     });
 }
 
@@ -60,11 +62,6 @@ function addToCart(event)
 }
 
 
-function clearCart()
-{
-    sessionStorage.setItem("cart", JSON.stringify({}));
-}
-
 
 function itemExistsInCart(itemName)
 {
@@ -76,8 +73,8 @@ function itemExistsInCart(itemName)
     else
     {
         //
-        let cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
-        for (cartItem of cartItems)
+        const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+        for (const cartItem of cartItems)
         {
             if (cartItem.name === itemName)
             {
@@ -88,15 +85,38 @@ function itemExistsInCart(itemName)
 }
 
 
-function renderCartModal()
+function loadCart()
 {
     //
     if (Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length == 0)
     {
-        // 
+        //
+        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
     }
     else
     {
         //
+        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        let cartItemContainer;
+        const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+
+        for (const cartItem of cartItems)
+        {
+            cartItemContainer = document.createElement("div");
+            cartItemContainer.classList.add("cart-item");
+            cartItemContainer.innerHTML = `
+                <div class="img cart-modal-img"></div>
+
+                <div class="item-title-and-input-wrapper">
+                    <h3 class="item-title">${cartItem.name}</h3>
+                    <input type="number" min="0">
+                </div>
+
+                <span class="item-price">${cartItem.price}</span>
+                `;
+            cartItemContainer.querySelector(".cart-modal-img").style.backgroundImage = cartItem.image;
+            cartItemContainer.querySelector(".cart-items-wrapper").append(cartItemContainer);
+        }
     }
 }

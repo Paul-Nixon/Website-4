@@ -388,6 +388,34 @@ header
     z-index: 1;
     text-transform: uppercase;
 }
+
+.cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content
+{
+    flex-direction: column;
+}
+
+.cart-item .item-title, .cart-item .item-price
+{
+    color: white;
+}
+
+.cart-item + .cart-item
+{
+    border-top: 2px solid white;
+}
+
+.cart-modal-img
+{
+    width: 6.25rem;
+    height: 6.25rem;
+}
 /* Header Styles END */
 
 
