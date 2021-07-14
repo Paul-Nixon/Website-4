@@ -29,7 +29,7 @@ function ready()
 function renderModal()
 {
     //
-    let modal = document.querySelector(".modal");
+    const modal = document.querySelector(".modal");
 
     //
     modal.innerHTML = `

@@ -40,6 +40,30 @@ function addToCart(event)
     if (itemExistsInCart())
     {
         //
+        const modal = document.querySelector(".modal");
+
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Confirmation</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This item has already been added to the cart.
+                    </p>
+                </div>
+            </div>`;
+        modal.style.display = "block";
+        document.querySelector(".close").addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+        window.onclick = (event) => {
+            if (event.target == modal)
+            {
+                modal.style.display = "none";
+            }
+        }
     }
     else
     {
@@ -58,9 +82,10 @@ function addToCart(event)
         let newCartItemKeyName = "item" + (Object.keys(oldCart).length + 1);
         let newCart = Object.assign(oldCart, {newCartItemKeyName: newCartItem});
         sessionStorage.setItem("cart", JSON.stringify(newCart));
+        document.querySelector(".badge").innerText = Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length;
+        loadCart();
     }
 }
-
 
 
 function itemExistsInCart(itemName)
@@ -110,13 +135,44 @@ function loadCart()
 
                 <div class="item-title-and-input-wrapper">
                     <h3 class="item-title">${cartItem.name}</h3>
-                    <input type="number" min="0">
+                    <input type="number" min="0" class="item-quantity">
                 </div>
 
                 <span class="item-price">${cartItem.price}</span>
                 `;
+            document.querySelector(".item-quantity").onchange = (event) => {
+                if (event.target.value === 0)
+                {
+                    removeCartItem(event);
+                }
+            }
+
             cartItemContainer.querySelector(".cart-modal-img").style.backgroundImage = cartItem.image;
             cartItemContainer.querySelector(".cart-items-wrapper").append(cartItemContainer);
         }
     }
+}
+
+
+function removeCartItem(event)
+{
+    //
+    const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+    let cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
+
+    //
+    for (const cartItem of cartItems)
+    {
+        if (cartItem.name === cartItemName)
+        {
+            //
+            cartItems.splice(cartItems.indexOf(cartItem), 1);
+            sessionStorage.setItem("cart", JSON.stringify(cartItems));
+            document.querySelector(".badge").innerText = Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length;
+            break;
+        }
+    }
+
+    //
+    cartItemContainer.querySelector(".cart-items-wrapper").removeChild(event.target.closest(".cart-item"));
 }
