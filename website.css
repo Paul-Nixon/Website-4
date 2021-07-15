@@ -379,14 +379,43 @@ header
     color: white;
 }
 
+.shopping-cart
+{
+    position: relative;
+}
+
 .shopping-cart-dropdown-menu
 {
     display: none;
     position: absolute;
+    top: 1.875rem;
+    right: 0;
     background-color: black;
-    min-width: 9.375rem;
+    min-width: 18.75rem;
     z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 1rem;
     text-transform: uppercase;
+}
+
+.btn-checkout
+{
+    background-color: white;
+    border: 2px solid white;
+}
+
+.btn-checkout:hover
+{
+    background-color: transparent;
+    color: white;
+}
+
+.item-quantity
+{
+    width: 30%;
+    outline: none;
+    font-size: 1rem;
 }
 
 .cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content
@@ -406,6 +435,17 @@ header
     color: white;
 }
 
+.cart-item .item-price, .cart-item .item-title-and-input-wrapper
+{
+    width: 30%;
+    margin-left: 0.5rem;
+}
+
+.cart-item
+{
+    padding: 0.5rem 0;
+}
+
 .cart-item + .cart-item
 {
     border-top: 2px solid white;
@@ -415,6 +455,8 @@ header
 {
     width: 6.25rem;
     height: 6.25rem;
+    background-size: cover;
+    
 }
 /* Header Styles END */
 

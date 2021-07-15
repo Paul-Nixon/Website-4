@@ -14,7 +14,7 @@ function ready()
     if (sessionStorage.getItem("cart") == null)
     {
         //
-        sessionStorage.setItem("cart", JSON.stringify({}));
+        sessionStorage.setItem("cart", JSON.stringify([]));
     }
     else
     {
@@ -78,11 +78,9 @@ function addToCart(event)
         };
 
         //
-        let oldCart = JSON.parse(sessionStorage.getItem("cart"));
-        let newCartItemKeyName = "item" + (Object.keys(oldCart).length + 1);
-        let newCart = Object.assign(oldCart, {newCartItemKeyName: newCartItem});
-        sessionStorage.setItem("cart", JSON.stringify(newCart));
-        document.querySelector(".badge").innerText = Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length;
+        let cart = JSON.parse(sessionStorage.getItem("cart"));
+        cart.push(newCartItem);
+        sessionStorage.setItem("cart", JSON.stringify(cart));
         loadCart();
     }
 }
@@ -91,14 +89,14 @@ function addToCart(event)
 function itemExistsInCart(itemName)
 {
     //
-    if (Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length == 0)
+    if (JSON.parse(sessionStorage.getItem("cart")).length === 0)
     {
         return false;
     }
     else
     {
         //
-        const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+        const cartItems = JSON.parse(sessionStorage.getItem("cart"));
         for (const cartItem of cartItems)
         {
             if (cartItem.name === itemName)
@@ -113,7 +111,7 @@ function itemExistsInCart(itemName)
 function loadCart()
 {
     //
-    if (Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length == 0)
+    if (JSON.parse(sessionStorage.getItem("cart")).length === 0)
     {
         //
         document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
@@ -122,9 +120,9 @@ function loadCart()
     else
     {
         //
-        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        document.querySelector(".cart-items-wrapper").innerHTML = ``;
         let cartItemContainer;
-        const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+        const cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
         for (const cartItem of cartItems)
         {
@@ -140,15 +138,15 @@ function loadCart()
 
                 <span class="item-price">${cartItem.price}</span>
                 `;
-            document.querySelector(".item-quantity").onchange = (event) => {
+            cartItemContainer.querySelector(".item-quantity").onchange = (event) => {
                 if (event.target.value === 0)
                 {
                     removeCartItem(event);
                 }
             }
-
+            document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
             cartItemContainer.querySelector(".cart-modal-img").style.backgroundImage = cartItem.image;
-            cartItemContainer.querySelector(".cart-items-wrapper").append(cartItemContainer);
+            document.querySelector(".cart-items-wrapper").append(cartItemContainer);
         }
     }
 }
@@ -157,7 +155,7 @@ function loadCart()
 function removeCartItem(event)
 {
     //
-    const cartItems = Object.keys(JSON.parse(sessionStorage.getItem("cart")));
+    const cartItems = JSON.parse(sessionStorage.getItem("cart"));
     let cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
 
     //
@@ -168,7 +166,7 @@ function removeCartItem(event)
             //
             cartItems.splice(cartItems.indexOf(cartItem), 1);
             sessionStorage.setItem("cart", JSON.stringify(cartItems));
-            document.querySelector(".badge").innerText = Object.keys(JSON.parse(sessionStorage.getItem("cart"))).length;
+            document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
             break;
         }
     }
