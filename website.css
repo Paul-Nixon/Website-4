@@ -453,9 +453,9 @@ header
 
 .cart-modal-img
 {
-    width: 6.25rem;
-    height: 6.25rem;
-    background-size: cover;
+    width: 3.125rem;
+    height: 3.125rem;
+    background-size: contain;
     
 }
 /* Header Styles END */
@@ -641,21 +641,6 @@ footer
     width: 100%;
     height: 55%;
     background-size: cover;
-}
-
-.popular-item-img-1
-{
-    background-image: url(Images/mens-green-tux.jpg);
-}
-
-.popular-item-img-2
-{
-    background-image: url(Images/floral-almond-toe-pumps.jpg);
-}
-
-.popular-item-img-3
-{
-    background-image: url(Images/green-sleeveless-dress.jpg);
 }
 
 .popular-items, .shop-by-category
@@ -1000,126 +985,6 @@ footer
     justify-content: center;
     align-items: center;
 }
-
-.mens-shoes-img-1
-{
-    background-image: url(Images/mens-brown-leather-loafers.jpg);
-}
-
-.mens-shoes-img-2
-{
-    background-image: url(Images/white-puma-sneakers.jpg);
-}
-
-.mens-shoes-img-3
-{
-    background-image: url(Images/grey-nike-running-shoes.jpg);
-}
-
-.mens-shoes-img-4
-{
-    background-image: url(Images/brown-dress-shoes.jpg);
-}
-
-.mens-shoes-img-5
-{
-    background-image: url(Images/brown-ecco-shoes.jpg);
-}
-
-.mens-shoes-img-6
-{
-    background-image: url(Images/red-nikes.jpg);
-}
-
-.suits-img-1
-{
-    background-image: url(Images/mens-green-tux.jpg);
-}
-
-.suits-img-2
-{
-    background-image: url(Images/black-tux.jpg);
-}
-
-.suits-img-3
-{
-    background-image: url(Images/grey-plaid-suit.jpg);
-}
-
-.suits-img-4
-{
-    background-image: url(Images/blue-suit.jpg);
-}
-
-.suits-img-5
-{
-    background-image: url(Images/black-suit-2.jpg);
-}
-
-.suits-img-6
-{
-    background-image: url(Images/grey-suit-2.jpg);
-}
-
-.mens-pants-img-1
-{
-    background-image: url(Images/mens-blue-denim-jeans.jpg);
-}
-
-.mens-pants-img-2
-{
-    background-image: url(Images/light-blue-acne-jeans.jpg);
-}
-
-.mens-pants-img-3
-{
-    background-image: url(Images/dark-blue-acne-jeans.jpg);
-}
-
-.mens-pants-img-4
-{
-    background-image: url(Images/mens-black-pants.jpg);
-}
-
-.mens-pants-img-5
-{
-    background-image: url(Images/mens-brown-jeans.jpg);
-}
-
-.mens-pants-img-6
-{
-    background-image: url(Images/mens-blue-denim-jeans-2.jpg);
-}
-
-.mens-shirts-img-1
-{
-    background-image: url(Images/maroon-polo-shirt.jpg);
-}
-
-.mens-shirts-img-2
-{
-    background-image: url(Images/mens-plain-grey-shirt.jpg);
-}
-
-.mens-shirts-img-3
-{
-    background-image: url(Images/white-crewneck-t-shirt.jpg);
-}
-
-.mens-shirts-img-4
-{
-    background-image: url(Images/blue-dress-shirt.jpg);
-}
-
-.mens-shirts-img-5
-{
-    background-image: url(Images/white-dress-shirt.jpg);
-}
-
-.mens-shirts-img-6
-{
-    background-image: url(Images/mens-plain-grey-shirt-2.jpg);
-}
 /* mens.html Styles END */
 
 
@@ -1135,126 +1000,6 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.womens-shoes-img-1
-{
-    background-image: url(Images/floral-almond-toe-pumps.jpg);
-}
-
-.womens-shoes-img-2
-{
-    background-image: url(Images/brown-leather-peep-toe-heeled-shoes.jpg);
-}
-
-.womens-shoes-img-3
-{
-    background-image: url(Images/nike-air-max-90-shoes.jpg);
-}
-
-.womens-shoes-img-4
-{
-    background-image: url(Images/blue-stilettos.jpg);
-}
-
-.womens-shoes-img-5
-{
-    background-image: url(Images/ankle-strap-sandals.jpg);
-}
-
-.womens-shoes-img-6
-{
-    background-image: url(Images/glittered-pointed-toe-pumps.jpg);
-}
-
-.dresses-img-1
-{
-    background-image: url(Images/green-sleeveless-dress.jpg);
-}
-
-.dresses-img-2
-{
-    background-image: url(Images/floral-tube-dress.jpg);
-}
-
-.dresses-img-3
-{
-    background-image: url(Images/blue-sleeveless-dress.jpg);
-}
-
-.dresses-img-4
-{
-    background-image: url(Images/red-long-sleeve-dress.jpg);
-}
-
-.dresses-img-5
-{
-    background-image: url(Images/red-sleeveless-dress.jpg);
-}
-
-.dresses-img-6
-{
-    background-image: url(Images/white-sleeveless-dress.jpg);
-}
-
-.womens-pants-img-1
-{
-    background-image: url(Images/women-blue-denim-jeans-1.jpg);
-}
-
-.womens-pants-img-2
-{
-    background-image: url(Images/pink-pants.jpg);
-}
-
-.womens-pants-img-3
-{
-    background-image: url(Images/3-pack-denim-jeans.jpg);
-}
-
-.womens-pants-img-4
-{
-    background-image: url(Images/women-grey-pants.jpg);
-}
-
-.womens-pants-img-5
-{
-    background-image: url(Images/blue-denim-shorts.jpg);
-}
-
-.womens-pants-img-6
-{
-    background-image: url(Images/blue-denim-shorts-2.jpg);
-}
-
-.womens-shirts-img-1
-{
-    background-image: url(Images/women-white-buttoned-shirt.jpg);
-}
-
-.womens-shirts-img-2
-{
-    background-image: url(Images/black-spaghetti-strap-top.jpg);
-}
-
-.womens-shirts-img-3
-{
-    background-image: url(Images/women-white-long-sleeve-shirt.jpg);
-}
-
-.womens-shirts-img-4
-{
-    background-image: url(Images/dragon-graphic-t-shirt.jpg);
-}
-
-.womens-shirts-img-5
-{
-    background-image: url(Images/women-orange-dress-shirt.jpg);
-}
-
-.womens-shirts-img-6
-{
-    background-image: url(Images/white-floral-blouse.jpg);
 }
 /* women.html Styles END */
 

@@ -67,7 +67,7 @@ function addToCart(event)
     }
     else
     {
-        let itemImg = event.target.parentElement.querySelector(".shop-item-img").style.backgroundImage;
+        let itemImg = event.target.parentElement.firstElementChild.src;
         let itemName = event.target.parentElement.querySelector(".item-title").innerText;
         let itemPrice = event.target.parentElement.querySelector(".item-price").innerText;
         let newCartItem = 
@@ -129,7 +129,7 @@ function loadCart()
             cartItemContainer = document.createElement("div");
             cartItemContainer.classList.add("cart-item");
             cartItemContainer.innerHTML = `
-                <div class="img cart-modal-img"></div>
+                <img class="img shop-item-img" src="${cartItem.image}">
 
                 <div class="item-title-and-input-wrapper">
                     <h3 class="item-title">${cartItem.name}</h3>
@@ -145,7 +145,6 @@ function loadCart()
                 }
             }
             document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
-            cartItemContainer.querySelector(".cart-modal-img").style.backgroundImage = cartItem.image;
             document.querySelector(".cart-items-wrapper").append(cartItemContainer);
         }
     }
