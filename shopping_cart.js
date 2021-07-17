@@ -37,7 +37,7 @@ function ready()
 function addToCart(event)
 {
     //
-    if (itemExistsInCart())
+    if (itemExistsInCart(event.target.parentElement.querySelector(".item-title").innerText))
     {
         //
         const modal = document.querySelector(".modal");
@@ -67,10 +67,10 @@ function addToCart(event)
     }
     else
     {
-        let itemImg = event.target.parentElement.firstElementChild.src;
-        let itemName = event.target.parentElement.querySelector(".item-title").innerText;
-        let itemPrice = event.target.parentElement.querySelector(".item-price").innerText;
-        let newCartItem = 
+        const itemImg = event.target.parentElement.firstElementChild.src,
+        itemName = event.target.parentElement.querySelector(".item-title").innerText,
+        itemPrice = event.target.parentElement.querySelector(".item-price").innerText.substring(1),
+        newCartItem = 
         {
             image: itemImg,
             name: itemName,
@@ -78,7 +78,7 @@ function addToCart(event)
         };
 
         //
-        let cart = JSON.parse(sessionStorage.getItem("cart"));
+        const cart = JSON.parse(sessionStorage.getItem("cart"));
         cart.push(newCartItem);
         sessionStorage.setItem("cart", JSON.stringify(cart));
         loadCart();
@@ -129,19 +129,24 @@ function loadCart()
             cartItemContainer = document.createElement("div");
             cartItemContainer.classList.add("cart-item");
             cartItemContainer.innerHTML = `
-                <img class="img shop-item-img" src="${cartItem.image}">
+                <img class="img cart-modal-img" src="${cartItem.image}">
 
                 <div class="item-title-and-input-wrapper">
                     <h3 class="item-title">${cartItem.name}</h3>
-                    <input type="number" min="0" class="item-quantity">
+                    <input type="number" min="0" value="1" class="item-quantity">
                 </div>
 
-                <span class="item-price">${cartItem.price}</span>
+                <span class="item-price">$${cartItem.price}</span>
                 `;
             cartItemContainer.querySelector(".item-quantity").onchange = (event) => {
-                if (event.target.value === 0)
+                if (event.target.value == 0)
                 {
                     removeCartItem(event);
+                }
+                else
+                {
+                    cartItemContainer.querySelector(".item-price").innerText = "$" +
+                    (parseFloat(cartItem.price) * event.target.value).toFixed(2);
                 }
             }
             document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
@@ -154,8 +159,8 @@ function loadCart()
 function removeCartItem(event)
 {
     //
-    const cartItems = JSON.parse(sessionStorage.getItem("cart"));
-    let cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
+    const cartItems = JSON.parse(sessionStorage.getItem("cart")),
+    cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
 
     //
     for (const cartItem of cartItems)
@@ -164,12 +169,17 @@ function removeCartItem(event)
         {
             //
             cartItems.splice(cartItems.indexOf(cartItem), 1);
+            document.querySelector(".badge").innerText = cartItems.length;
             sessionStorage.setItem("cart", JSON.stringify(cartItems));
-            document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
             break;
         }
     }
 
     //
-    cartItemContainer.querySelector(".cart-items-wrapper").removeChild(event.target.closest(".cart-item"));
+    event.target.closest(".cart-items-wrapper").removeChild(event.target.closest(".cart-item"));
+    if (cartItems.length == 0)
+    {
+        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
+    }
 }

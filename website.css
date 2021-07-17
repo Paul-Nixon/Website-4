@@ -375,7 +375,7 @@ header
 
 .shopping-cart:hover .cart-link
 {
-    background-color: black;
+    background-color: #a17f1a;
     color: white;
 }
 
@@ -390,12 +390,11 @@ header
     position: absolute;
     top: 1.875rem;
     right: 0;
-    background-color: black;
+    background-color: #a17f1a;
     min-width: 18.75rem;
     z-index: 1;
     color: white;
     text-align: center;
-    padding: 1rem;
     text-transform: uppercase;
 }
 
@@ -413,12 +412,17 @@ header
 
 .item-quantity
 {
-    width: 30%;
+    width: 70%;
     outline: none;
     font-size: 1rem;
 }
 
-.cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content
+.shopping-cart-dropdown-menu
+{
+    padding: 0.5rem;
+}
+
+.cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content, .btn-checkout-wrapper
 {
     display: flex;
     justify-content: center;
@@ -438,12 +442,18 @@ header
 .cart-item .item-price, .cart-item .item-title-and-input-wrapper
 {
     width: 30%;
-    margin-left: 0.5rem;
+    margin-left: 1.25rem;
+}
+
+.item-title-and-input-wrapper .item-title
+{
+    font-size: 0.875rem;
 }
 
 .cart-item
 {
-    padding: 0.5rem 0;
+    padding: 1rem 0.5rem;
+    width: 90%;
 }
 
 .cart-item + .cart-item
@@ -456,7 +466,13 @@ header
     width: 3.125rem;
     height: 3.125rem;
     background-size: contain;
-    
+}
+
+.btn-checkout-wrapper
+{
+    width: 100%;
+    border-top: 2px solid lightgrey;
+    padding: 1rem 0;
 }
 /* Header Styles END */
 

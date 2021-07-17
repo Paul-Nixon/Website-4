@@ -22,14 +22,26 @@
             <a href="/" class="brand-name">beauté</a>
 
             <div class="login-and-cart-wrapper">
-                <a href="login.html">
+                <a href="login.html" class="login-link">
                     <i class="fa fa-user"></i>
                     Login
                 </a>
-                <a href="cart.html">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span class="num-cart-items">0</span>
-                </a>
+
+                <div class="shopping-cart">
+                    <a href="cart.html" class="cart-link">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+
+                    <div class="shopping-cart-dropdown-menu">
+                        <div class="shopping-cart-dropdown-content">
+                            <div class="cart-items-wrapper"></div>
+                            <div class="btn-checkout-wrapper">
+                                <button class="btn btn-checkout">checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
