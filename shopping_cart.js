@@ -15,6 +15,8 @@ function ready()
     {
         //
         sessionStorage.setItem("cart", JSON.stringify([]));
+        document.querySelector(".shopping-cart-dropdown-content").style.display = "none";
+        document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
     }
     else
     {
@@ -81,7 +83,7 @@ function addToCart(event)
         const cart = JSON.parse(sessionStorage.getItem("cart"));
         cart.push(newCartItem);
         sessionStorage.setItem("cart", JSON.stringify(cart));
-        loadCart();
+        addToCartDropdownMenu(newCartItem);
     }
 }
 
@@ -111,16 +113,15 @@ function itemExistsInCart(itemName)
 function loadCart()
 {
     //
-    if (JSON.parse(sessionStorage.getItem("cart")).length === 0)
+    if (JSON.parse(sessionStorage.getItem("cart")).length == 0)
     {
         //
-        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        document.querySelector(".shopping-cart-dropdown-content").style.display = "none";
         document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
     }
     else
     {
         //
-        document.querySelector(".cart-items-wrapper").innerHTML = ``;
         let cartItemContainer;
         const cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
@@ -179,7 +180,52 @@ function removeCartItem(event)
     event.target.closest(".cart-items-wrapper").removeChild(event.target.closest(".cart-item"));
     if (cartItems.length == 0)
     {
-        document.querySelector(".shopping-cart-dropdown-menu").innerHTML = ``;
+        document.querySelector(".shopping-cart-dropdown-content").style.display = "none";
         document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
     }
+}
+
+
+function addToCartDropdownMenu(newCartItem)
+{
+    if (document.querySelector(".shopping-cart-dropdown-content") == null)
+    {
+        const shoppingCartDropdownContent = document.createElement("div");
+        shoppingCartDropdownContent.classList.add("shopping-cart-dropdown-content");
+        shoppingCartDropdownContent.style.display = "flex";
+        shoppingCartDropdownContent.innerHTML = `
+            <div class="cart-items-wrapper"></div>
+            <div class="btn-checkout-wrapper">
+                <button class="btn btn-checkout">checkout</button>
+            </div>`;
+        document.querySelector(".shopping-cart-dropdown-menu").appendChild(shoppingCartDropdownContent);
+        document.querySelector(".shopping-cart-dropdown-menu").innerText = "";
+    }
+    
+    const cartItemContainer = document.createElement("div");
+    cartItemContainer.classList.add("cart-item");
+    cartItemContainer.innerHTML = `
+        <img class="img cart-modal-img" src="${newCartItem.image}">
+
+        <div class="item-title-and-input-wrapper">
+            <h3 class="item-title">${newCartItem.name}</h3>
+            <input type="number" min="0" value="1" class="item-quantity">
+        </div>
+
+        <span class="item-price">$${newCartItem.price}</span>
+        `;
+    cartItemContainer.querySelector(".item-quantity").onchange = (event) => {
+        if (event.target.value == 0)
+        {
+            removeCartItem(event);
+        }
+        else
+        {
+            cartItemContainer.querySelector(".item-price").innerText = "$" +
+            (parseFloat(newCartItem.price) * event.target.value).toFixed(2);
+        }
+    }
+
+    document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
+    cartItemContainer.parentElement.appendChild(cartItemContainer);
 }
