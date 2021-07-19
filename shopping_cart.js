@@ -15,8 +15,8 @@ function ready()
     {
         //
         sessionStorage.setItem("cart", JSON.stringify([]));
-        document.querySelector(".shopping-cart-dropdown-content").style.display = "none";
-        document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
+        document.querySelector(".cart-items-wrapper").innerText = "no items in cart";
+        document.querySelector(".btn-checkout-wrapper").style.display = "none";
     }
     else
     {
@@ -48,7 +48,7 @@ function addToCart(event)
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">&times;</span>
-                    <h2>Confirmation</h2>
+                    <h2>Item Exists in Cart</h2>
                 </div>
                 <div class="modal-body">
                     <p>
@@ -76,7 +76,8 @@ function addToCart(event)
         {
             image: itemImg,
             name: itemName,
-            price: itemPrice
+            price: itemPrice,
+            quantity: 0
         };
 
         //
@@ -122,12 +123,11 @@ function loadCart()
     else
     {
         //
-        let cartItemContainer;
         const cartItems = JSON.parse(sessionStorage.getItem("cart"));
 
         for (const cartItem of cartItems)
         {
-            cartItemContainer = document.createElement("div");
+            const cartItemContainer = document.createElement("div");
             cartItemContainer.classList.add("cart-item");
             cartItemContainer.innerHTML = `
                 <img class="img cart-modal-img" src="${cartItem.image}">
@@ -150,8 +150,8 @@ function loadCart()
                     (parseFloat(cartItem.price) * event.target.value).toFixed(2);
                 }
             }
-            document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
-            document.querySelector(".cart-items-wrapper").append(cartItemContainer);
+            document.querySelector(".badge").innerText = "(" + cartItems.length + ")";
+            document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
         }
     }
 }
@@ -170,7 +170,7 @@ function removeCartItem(event)
         {
             //
             cartItems.splice(cartItems.indexOf(cartItem), 1);
-            document.querySelector(".badge").innerText = cartItems.length;
+            document.querySelector(".badge").innerText = "(" + cartItems.length + ")";
             sessionStorage.setItem("cart", JSON.stringify(cartItems));
             break;
         }
@@ -180,28 +180,20 @@ function removeCartItem(event)
     event.target.closest(".cart-items-wrapper").removeChild(event.target.closest(".cart-item"));
     if (cartItems.length == 0)
     {
-        document.querySelector(".shopping-cart-dropdown-content").style.display = "none";
-        document.querySelector(".shopping-cart-dropdown-menu").innerText = "no items in cart";
+        document.querySelector(".cart-items-wrapper").innerText = "no items in cart";
+        document.querySelector(".btn-checkout-wrapper").style.display = "none";
     }
 }
 
 
 function addToCartDropdownMenu(newCartItem)
 {
-    if (document.querySelector(".shopping-cart-dropdown-content") == null)
+    if (document.querySelector(".btn-checkout-wrapper").style.display === "none")
     {
-        const shoppingCartDropdownContent = document.createElement("div");
-        shoppingCartDropdownContent.classList.add("shopping-cart-dropdown-content");
-        shoppingCartDropdownContent.style.display = "flex";
-        shoppingCartDropdownContent.innerHTML = `
-            <div class="cart-items-wrapper"></div>
-            <div class="btn-checkout-wrapper">
-                <button class="btn btn-checkout">checkout</button>
-            </div>`;
-        document.querySelector(".shopping-cart-dropdown-menu").appendChild(shoppingCartDropdownContent);
-        document.querySelector(".shopping-cart-dropdown-menu").innerText = "";
+        document.querySelector(".btn-checkout-wrapper").style.display = "block";
+        document.querySelector(".cart-items-wrapper").innerText = "";
     }
-    
+
     const cartItemContainer = document.createElement("div");
     cartItemContainer.classList.add("cart-item");
     cartItemContainer.innerHTML = `
@@ -225,7 +217,38 @@ function addToCartDropdownMenu(newCartItem)
             (parseFloat(newCartItem.price) * event.target.value).toFixed(2);
         }
     }
+    const modal = document.querySelector(".modal");
 
-    document.querySelector(".badge").innerText = JSON.parse(sessionStorage.getItem("cart")).length;
-    cartItemContainer.parentElement.appendChild(cartItemContainer);
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Confirmation</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        New item added to the cart!
+                    </p>
+                </div>
+            </div>`;
+        modal.style.display = "block";
+        document.querySelector(".close").addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+        window.onclick = (event) => {
+            if (event.target == modal)
+            {
+                modal.style.display = "none";
+            }
+        }
+
+    document.querySelector(".badge").innerText = "(" + JSON.parse(sessionStorage.getItem("cart")).length + ")";
+    document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
+}
+
+
+function updateItemQuantity(event)
+{
+    const cartItems = JSON.parse(sessionStorage.getItem("cart")),
+    cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
 }
