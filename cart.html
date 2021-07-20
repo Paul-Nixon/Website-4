@@ -7,6 +7,7 @@
     <title>Your Cart</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="website.css">
+    <script src="cart_webpage.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -28,10 +29,12 @@
                 </a>
 
                 <div class="shopping-cart">
-                    <a href="cart.html" class="cart-link">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="badge">0</span>
-                    </a>
+                    <div class="cart-and-badge-wrapper">
+                        <a href="cart.html" class="cart-link">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="badge">0</span>
+                        </a>
+                    </div>
 
                     <div class="shopping-cart-dropdown-menu">
                         <div class="shopping-cart-dropdown-content">
@@ -47,7 +50,13 @@
     </header>
 
     <!-- Main Section -->
-    
+    <section class="cart-section">
+        <div class="container cart-container">
+            <h2 class="section-title">shopping cart</h2>
+
+            <div class="cart-main-content"></div>
+        </div>
+    </section>
 
     <!-- Footer Section -->
     <footer>

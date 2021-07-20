@@ -146,10 +146,12 @@ function loadCart()
                 }
                 else
                 {
-                    cartItemContainer.querySelector(".item-price").innerText = "$" +
+                    event.target.closest(".cart-item").querySelector(".item-price").innerText = "$" +
                     (parseFloat(cartItem.price) * event.target.value).toFixed(2);
+                    updateItemQuantity(event);
                 }
-            }
+            };
+
             document.querySelector(".badge").innerText = "(" + cartItems.length + ")";
             document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
         }
@@ -161,7 +163,7 @@ function removeCartItem(event)
 {
     //
     const cartItems = JSON.parse(sessionStorage.getItem("cart")),
-    cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
+    cartItemName = event.target.previousElementSibling.innerText;
 
     //
     for (const cartItem of cartItems)
@@ -213,34 +215,36 @@ function addToCartDropdownMenu(newCartItem)
         }
         else
         {
-            cartItemContainer.querySelector(".item-price").innerText = "$" +
+            event.target.closest(".cart-item").querySelector(".item-price").innerText = "$" +
             (parseFloat(newCartItem.price) * event.target.value).toFixed(2);
+            updateItemQuantity(event);
         }
-    }
+    };
+
     const modal = document.querySelector(".modal");
 
-        modal.innerHTML = `
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h2>Confirmation</h2>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        New item added to the cart!
-                    </p>
-                </div>
-            </div>`;
-        modal.style.display = "block";
-        document.querySelector(".close").addEventListener("click", () => {
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Confirmation</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    New item added to the cart!
+                </p>
+            </div>
+        </div>`;
+    modal.style.display = "block";
+    document.querySelector(".close").addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+    window.onclick = (event) => {
+        if (event.target == modal)
+        {
             modal.style.display = "none";
-        });
-        window.onclick = (event) => {
-            if (event.target == modal)
-            {
-                modal.style.display = "none";
-            }
         }
+    }
 
     document.querySelector(".badge").innerText = "(" + JSON.parse(sessionStorage.getItem("cart")).length + ")";
     document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
@@ -250,5 +254,15 @@ function addToCartDropdownMenu(newCartItem)
 function updateItemQuantity(event)
 {
     const cartItems = JSON.parse(sessionStorage.getItem("cart")),
-    cartItemName = event.target.parentElement.querySelector(".item-title").innerText;
+    cartItemName = event.target.previousElementSibling.innerText;
+
+    for (const cartItem of cartItems)
+    {
+        if (cartItem.name === cartItemName)
+        {
+            cartItem.quantity = event.target.value;
+            sessionStorage.setItem("cart", JSON.stringify(cartItems));
+            break;
+        }
+    }
 }

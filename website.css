@@ -1026,6 +1026,45 @@ footer
 
 
 /* cart.html Styles START */
+.cart-section
+{
+
+}
+
+.cart-container
+{
+
+}
+
+.cart-container .section-title::before
+{
+
+}
+
+.cart-main-content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-message
+{
+
+}
+
+.shop-links-wrapper
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-shop-link
+{
+
+}
 /* cart.html Styles END */
 
 
