@@ -403,13 +403,13 @@ header
     text-transform: uppercase;
 }
 
-.btn-view-cart
+.btn-checkout
 {
     background-color: white;
     border: 2px solid white;
 }
 
-.btn-view-cart:hover
+.btn-checkout:hover
 {
     background-color: transparent;
     color: white;
@@ -427,7 +427,8 @@ header
     padding: 0.5rem;
 }
 
-.cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content, .btn-checkout-wrapper, .cart-and-badge-wrapper
+.cart-item, .item-title-and-input-wrapper, .cart-items-wrapper, .shopping-cart-dropdown-content,
+.btn-checkout-wrapper, .cart-and-badge-wrapper
 {
     display: flex;
     justify-content: center;
@@ -1025,117 +1026,26 @@ footer
 /* women.html Styles END */
 
 
-/* cart.html Styles START */
-.cart-section
-{
-    padding: 1rem;
-}
-
-.cart-container
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-}
-
-.cart-container .section-title
-{
-    text-align: left;
-    width: 100%;
-}
-
-.cart-container .section-title::before
-{
-
-}
-
-.cart-main-content, .shop-links-wrapper, .cart-message-and-shop-links-wrapper, .subtotal-and-checkout-btn-wrapper,
-.item-info-wrapper
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cart-message
-{
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.cart-main-content .cart-items-wrapper .cart-item + .cart-item
-{
-    border-top: none;
-    margin-top: ;
-}
-
-.cart-webpage-img
-{
-    width: 12.5rem;
-    height: 12.5rem;
-    background-size: contain;
-}
-
-.cart-items-wrapper, .subtotal-and-checkout-btn-wrapper
-{
-    width: 50%;
-}
-
-.cart-message-and-shop-links-wrapper, .subtotal-and-checkout-btn-wrapper, .item-info-wrapper
-{
-    flex-direction: column;
-}
-
-.subtotal-wrapper
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.subtotal-label
-{
-
-}
-
-.subtotal
-{
-
-}
-
-.subtotal-and-checkout-btn-wrapper
-{
-    border-left: ;
-}
-
-.cart-message-and-shop-links-wrapper
-{
-    width: 100%;
-}
-
-.cart-message, .shop-links-wrapper
-{
-    width: 25%;
-}
-
-.btn-shop-link
-{
-    background-color: black;
-    border: 2px solid black;
-    color: white;
-}
-
-.btn-shop-link:hover
-{
-    background-color: transparent;
-    color: black;
-}
-/* cart.html Styles END */
-
-
 /* checkout.html Styles START */
+.checkout-section
+{
+
+}
+
+.checkout-container
+{
+
+}
+
+.customer-info
+{
+
+}
+
+.transaction-info
+{
+    
+}
 /* checkout.html Styles END */
 
 

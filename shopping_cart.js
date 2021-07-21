@@ -124,6 +124,7 @@ function loadCart()
     {
         //
         const cartItems = JSON.parse(sessionStorage.getItem("cart"));
+        document.querySelector(".badge").innerText = "(" + cartItems.length + ")";
 
         for (const cartItem of cartItems)
         {
@@ -152,7 +153,6 @@ function loadCart()
                 }
             };
 
-            document.querySelector(".badge").innerText = "(" + cartItems.length + ")";
             document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
         }
     }
