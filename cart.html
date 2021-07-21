@@ -39,8 +39,11 @@
                     <div class="shopping-cart-dropdown-menu">
                         <div class="shopping-cart-dropdown-content">
                             <div class="cart-items-wrapper"></div>
+                            
                             <div class="btn-checkout-wrapper">
-                                <button class="btn btn-checkout">checkout</button>
+                                <a href="cart.html" class="cart-link">
+                                    <button class="btn btn-view-cart">view cart</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +57,27 @@
         <div class="container cart-container">
             <h2 class="section-title">shopping cart</h2>
 
-            <div class="cart-main-content"></div>
+            <div class="cart-main-content">
+                <div class="cart-message-and-shop-links-wrapper">
+                    <span class="cart-message">There are no items in your cart.</span>
+
+                    <div class="shop-links-wrapper">
+                        <button class="btn btn-shop-link">men's shop</button>
+                        <button class="btn btn-shop-link">women's shop</button>
+                    </div>
+                </div>
+
+                <div class="cart-items-wrapper"></div>
+                
+                <div class="subtotal-and-checkout-btn-wrapper">
+                    <div class="subtotal-wrapper">
+                        <span class="subtotal-label">Subtotal:</span>
+                        <span class="subtotal"></span>
+                    </div>
+
+                    <button class="btn btn-checkout">checkout</button>
+                </div>
+            </div>
         </div>
     </section>
 
