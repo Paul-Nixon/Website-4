@@ -50,10 +50,69 @@
     <section class="checkout-section">
         <div class="container checkout-container">
             <div class="customer-info">
+                <div class="checkout-input-wrapper">
+                    <label class="checkout-label">Contact Information</label>
+                    <input type="text" placeholder="Email" class="checkout-input">
+                </div>
 
+                <div class="checkout-input-wrapper">
+                    <label class="checkout-label">Delivery Method</label>
+                    <input type="radio" name="delivery-method" value="Shipping" class="checkout-input" checked>
+                    <input type="radio" name="delivery-method" value="Pick up" class="checkout-input">
+                </div>
+
+                <div class="checkout-input-wrapper">
+                    <label class="checkout-label">Shipping address</label>
+
+                    <div class="input-group">
+                        <input type="text" class="checkout-input" placeholder="First name">
+                        <input type="text" class="checkout-input" placeholder="Last name">
+                    </div>
+
+                    <input type="text" class="checkout-input" placeholder="Address">
+                    <input type="text" class="checkout-input" placeholder="City">
+                    <input type="text" class="checkout-input" placeholder="ZIP code" maxlength="5">
+                    <input type="tel" class="checkout-input" placeholder="Phone number"
+                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                </div>
+
+                <div class="checkout-input-wrapper">
+                    <label class="checkout-label">Pickup locations</label>
+
+                    <div class="input-group">
+                        <input type="radio" name="pickup-location" value="Pearly Gates Plaza" class="checkout-input">
+                        <input type="radio" name="pickup-location" value="Dalt Wisney Mall" class="checkout-input">
+                        <input type="radio" name="pickup-location" value="River Flow Mall" class="checkout-input">
+                    </div>
+                </div>
             </div>
+
             <div class="transaction-info">
-                
+                <div class="checkout-items-wrapper"></div>
+
+                <div class="payment-info">
+                    <div class="payment-label-wrapper">
+                        <span class="payment-label">Subtotal</span>
+                        <span class="subtotal"></span>
+                    </div>
+
+                    <div class="payment-label-wrapper">
+                        <span class="payment-label delivery-method-label">Subtotal</span>
+                        <span class="delivery-method-price"></span>
+                    </div>
+
+                    <div class="payment-label-wrapper">
+                        <span class="payment-label">Tax</span>
+                        <span class="tax-price"></span>
+                    </div>
+
+                    <div class="payment-label-wrapper">
+                        <span class="total-label">Total</span>
+                        <span class="total-price"></span>
+                    </div>
+                </div>
+
+                <button class="btn btn-purchase">purchase</button>
             </div>
         </div>
     </section>

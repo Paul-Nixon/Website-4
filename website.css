@@ -1029,20 +1029,96 @@ footer
 /* checkout.html Styles START */
 .checkout-section
 {
-
+    padding: 1rem;
 }
 
 .checkout-container
 {
-
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .customer-info
 {
-
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .transaction-info
+{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-input-wrapper
+{
+
+}
+
+.checkout-label
+{
+
+}
+
+.checkout-input
+{
+
+}
+
+.payment-info
+{
+
+}
+
+.payment-label-wrapper
+{
+
+}
+
+.payment-label
+{
+
+}
+
+.subtotal
+{
+
+}
+
+.delivery-method-price
+{
+
+}
+
+.tax-price
+{
+
+}
+
+.total-label
+{
+
+}
+
+.total-price
+{
+
+}
+
+.btn-purchase
+{
+
+}
+
+.btn-purchase:hover
 {
     
 }

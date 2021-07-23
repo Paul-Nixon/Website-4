@@ -77,7 +77,7 @@ function addToCart(event)
             image: itemImg,
             name: itemName,
             price: itemPrice,
-            quantity: 0
+            quantity: 1
         };
 
         //
@@ -135,10 +135,10 @@ function loadCart()
 
                 <div class="item-title-and-input-wrapper">
                     <h3 class="item-title">${cartItem.name}</h3>
-                    <input type="number" min="0" value="1" class="item-quantity">
+                    <input type="number" min="0" value="${cartItem.quantity}" class="item-quantity">
                 </div>
 
-                <span class="item-price">$${cartItem.price}</span>
+                <span class="item-price">$${cartItem.price * cartItem.quantity}</span>
                 `;
             cartItemContainer.querySelector(".item-quantity").onchange = (event) => {
                 if (event.target.value == 0)
