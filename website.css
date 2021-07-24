@@ -1047,6 +1047,7 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: ;
 }
 
 .transaction-info
@@ -1056,71 +1057,131 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: ;
 }
 
 .checkout-input-wrapper
 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.checkout-input-wrapper + .checkout-input-wrapper
+{
+    margin-top: 1.25rem;
 }
 
 .checkout-label
 {
-
+    font-size: ;
+    margin-bottom: 1rem;
+    text-align: left;
 }
 
 .checkout-input
 {
+    width: 100%;
+    outline: none;
+    padding: 0.5rem;
+}
 
+.checkout-input:focus
+{
+    border: 2px solid #a17f1a;
+}
+
+.checkout-items-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-item
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-item-img
+{
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-right: 0.5rem;
+    border-radius: 0.3125rem;
+    background-size: contain;
+}
+
+.checkout-item-title
+{
+
+}
+
+.checkout-item-price
+{
+    font-weight: ;
 }
 
 .payment-info
 {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .payment-label-wrapper
 {
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .payment-label
 {
-
+    color: ;
 }
 
 .subtotal
 {
-
+    font-weight: ;
 }
 
 .delivery-method-price
 {
-
+    font-weight: ;
 }
 
 .tax-price
 {
-
+    font-weight: ;
 }
 
 .total-label
 {
-
+    font-weight: ;
 }
 
 .total-price
 {
-
+    font-weight: ;
+    font-size: ;
 }
 
 .btn-purchase
 {
-
+    background-color: ;
+    border: ;
 }
 
 .btn-purchase:hover
 {
-    
+    background-color: transparent;
+    color: ;
 }
 /* checkout.html Styles END */
 
