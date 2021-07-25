@@ -1029,12 +1029,12 @@ footer
 /* checkout.html Styles START */
 .checkout-section
 {
-    padding: 1rem;
+    padding: 1.25rem;
 }
 
 .checkout-container
 {
-    height: 70vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1046,7 +1046,7 @@ footer
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: ;
 }
 
@@ -1056,7 +1056,7 @@ footer
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: ;
 }
 
@@ -1065,7 +1065,26 @@ footer
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
+    width: 50%;
+}
+
+.checkout-input-wrapper:nth-child(3) .input-group
+{
+    display: flex;
+    justify-content: center;
     align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.checkout-input-wrapper:nth-child(3) .input-group .checkout-input
+{
+    margin-top: 0;
+}
+
+.checkout-input-wrapper:nth-child(3) .input-group .checkout-input:first-child
+{
+    margin-right: 0.5rem;
 }
 
 .checkout-input-wrapper + .checkout-input-wrapper
@@ -1077,7 +1096,7 @@ footer
 {
     font-size: ;
     margin-bottom: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 .checkout-input
@@ -1085,6 +1104,11 @@ footer
     width: 100%;
     outline: none;
     padding: 0.5rem;
+}
+
+.checkout-input + .checkout-input
+{
+    margin-top: 0.5rem;
 }
 
 .checkout-input:focus
@@ -1114,6 +1138,7 @@ footer
     margin-right: 0.5rem;
     border-radius: 0.3125rem;
     background-size: contain;
+    position: relative;
 }
 
 .checkout-item-title
