@@ -1047,7 +1047,7 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: ;
+    padding: 0.5rem;
 }
 
 .transaction-info
@@ -1057,7 +1057,7 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    padding: ;
+    padding: 0.5rem;
 }
 
 .checkout-input-wrapper
@@ -1069,11 +1069,15 @@ footer
     width: 50%;
 }
 
-.checkout-input-wrapper:nth-child(3) .input-group
+.input-group
 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.checkout-input-wrapper:nth-child(3) .input-group
+{
     margin-bottom: 0.5rem;
 }
 
@@ -1089,12 +1093,12 @@ footer
 
 .checkout-input-wrapper + .checkout-input-wrapper
 {
-    margin-top: 1.25rem;
+    margin-top: 1.125rem;
 }
 
 .checkout-label
 {
-    font-size: ;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -1111,9 +1115,20 @@ footer
     margin-top: 0.5rem;
 }
 
+input[type="radio"].checkout-input
+{
+    margin: 0 0.5rem 0 0;
+    padding: 0;
+}
+
 .checkout-input:focus
 {
     border: 2px solid #a17f1a;
+}
+
+.pickup-locations
+{
+    display: none;
 }
 
 .checkout-items-wrapper
@@ -1148,7 +1163,7 @@ footer
 
 .checkout-item-price
 {
-    font-weight: ;
+    font-weight: 500;
 }
 
 .payment-info
@@ -1157,6 +1172,7 @@ footer
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .payment-label-wrapper
@@ -1164,49 +1180,59 @@ footer
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.payment-label-wrapper + .payment-label-wrapper
+{
+    margin-top: 1rem;
 }
 
 .payment-label
 {
-    color: ;
+    color: rgb(94, 80, 80);
 }
 
 .subtotal
 {
-    font-weight: ;
+    font-weight: 500;
 }
 
 .delivery-method-price
 {
-    font-weight: ;
+    font-weight: 500;
 }
 
 .tax-price
 {
-    font-weight: ;
+    font-weight: 500;
 }
 
 .total-label
 {
-    font-weight: ;
+    font-weight: 500;
 }
 
 .total-price
 {
-    font-weight: ;
-    font-size: ;
+    font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .btn-purchase
 {
-    background-color: ;
-    border: ;
+    background-color: #a17f1a;
+    border: 2px solid black;
+    align-self: center;
+    color: white;
+    font-size: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .btn-purchase:hover
 {
     background-color: transparent;
-    color: ;
+    color: black;
 }
 /* checkout.html Styles END */
 

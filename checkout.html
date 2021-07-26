@@ -49,6 +49,7 @@
     <!-- Main Section -->
     <section class="checkout-section">
         <div class="container checkout-container">
+            <!-- Customer Info -->
             <div class="customer-info">
                 <div class="checkout-input-wrapper">
                     <label class="checkout-label">Contact Information</label>
@@ -57,14 +58,16 @@
 
                 <div class="checkout-input-wrapper">
                     <label class="checkout-label">Delivery Method</label>
-                    
+
                     <div class="input-group">
-                        <input type="radio" name="delivery-method" value="Shipping" class="checkout-input" checked>
-                        <input type="radio" name="delivery-method" value="Pick up" class="checkout-input">
+                        <input type="radio" name="delivery-method" id="shipping" class="checkout-input" checked>
+                        <label for="shipping">Delivery Method</label>
+                        <input type="radio" name="delivery-method" id="pickup" class="checkout-input">
+                        <label for="pickup">Pickup</label>
                     </div>
                 </div>
 
-                <div class="checkout-input-wrapper">
+                <div class="checkout-input-wrapper shipping-address-form">
                     <label class="checkout-label">Shipping address</label>
 
                     <div class="input-group">
@@ -79,39 +82,43 @@
                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                 </div>
 
-                <div class="checkout-input-wrapper">
+                <div class="checkout-input-wrapper pickup-locations">
                     <label class="checkout-label">Pickup locations</label>
 
                     <div class="input-group">
-                        <input type="radio" name="pickup-location" value="Pearly Gates Plaza" class="checkout-input">
-                        <input type="radio" name="pickup-location" value="Dalt Wisney Mall" class="checkout-input">
-                        <input type="radio" name="pickup-location" value="River Flow Mall" class="checkout-input">
+                        <input type="radio" name="pickup-location" id="Pearly Gates Plaza" class="checkout-input">
+                        <label for="Pearly Gates Plaza">Pearly Gates Plaza</label>
+                        <input type="radio" name="pickup-location" id="Dalt Wisney Mall" class="checkout-input">
+                        <label for="Dalt Wisney Mall">Dalt Wisney Mall</label>
+                        <input type="radio" name="pickup-location" id="River Flow Mall" class="checkout-input">
+                        <label for="River Flow Mall">River Flow Mall</label>
                     </div>
                 </div>
             </div>
 
+            <!-- Transaction Info -->
             <div class="transaction-info">
                 <div class="checkout-items-wrapper"></div>
 
                 <div class="payment-info">
                     <div class="payment-label-wrapper">
                         <span class="payment-label">Subtotal</span>
-                        <span class="subtotal"></span>
+                        <span class="subtotal">$0.00</span>
                     </div>
 
                     <div class="payment-label-wrapper">
-                        <span class="payment-label delivery-method-label">Subtotal</span>
-                        <span class="delivery-method-price"></span>
+                        <span class="payment-label delivery-method-label">Shipping</span>
+                        <span class="delivery-method-price">$0.00</span>
                     </div>
 
                     <div class="payment-label-wrapper">
                         <span class="payment-label">Tax</span>
-                        <span class="tax-price"></span>
+                        <span class="tax-price">$0.00</span>
                     </div>
 
                     <div class="payment-label-wrapper">
                         <span class="total-label">Total</span>
-                        <span class="total-price"></span>
+                        <span class="total-price">$0.00</span>
                     </div>
                 </div>
 
@@ -119,6 +126,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal"></div>
 
     <!-- Footer Section -->
     <footer>
