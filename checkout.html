@@ -53,7 +53,7 @@
             <div class="customer-info">
                 <div class="checkout-input-wrapper">
                     <label class="checkout-label">Contact Information</label>
-                    <input type="text" placeholder="Email" class="checkout-input">
+                    <input id="email" type="email" placeholder="Email" class="checkout-input">
                 </div>
 
                 <div class="checkout-input-wrapper">
@@ -71,14 +71,15 @@
                     <label class="checkout-label">Shipping address</label>
 
                     <div class="input-group">
-                        <input type="text" class="checkout-input" placeholder="First name">
-                        <input type="text" class="checkout-input" placeholder="Last name">
+                        <input type="text" id="firstName" class="checkout-input" placeholder="First name">
+                        <input type="text" id="lastName" class="checkout-input" placeholder="Last name">
                     </div>
 
-                    <input type="text" class="checkout-input" placeholder="Address">
-                    <input type="text" class="checkout-input" placeholder="City">
-                    <input type="text" class="checkout-input" placeholder="ZIP code" maxlength="5">
-                    <input type="tel" class="checkout-input" placeholder="Phone number"
+                    <input type="text" id="address" class="checkout-input" placeholder="Address">
+                    <input type="text" id="city" class="checkout-input" placeholder="City">
+                    <input type="text" id="zipCode" class="checkout-input" pattern="[0-9]*"
+                    placeholder="ZIP code" maxlength="5">
+                    <input type="tel" id="telNo" class="checkout-input" placeholder="Phone number"
                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
                 </div>
 
@@ -103,22 +104,22 @@
                 <div class="payment-info">
                     <div class="payment-label-wrapper">
                         <span class="payment-label">Subtotal</span>
-                        <span class="subtotal">$0.00</span>
+                        <span class="subtotal"></span>
                     </div>
 
                     <div class="payment-label-wrapper">
                         <span class="payment-label delivery-method-label">Shipping</span>
-                        <span class="delivery-method-price">$0.00</span>
+                        <span class="delivery-method-price">Free</span>
                     </div>
 
                     <div class="payment-label-wrapper">
                         <span class="payment-label">Tax</span>
-                        <span class="tax-price">$0.00</span>
+                        <span class="tax-price"></span>
                     </div>
 
                     <div class="payment-label-wrapper">
                         <span class="total-label">Total</span>
-                        <span class="total-price">$0.00</span>
+                        <span class="total-price"></span>
                     </div>
                 </div>
 

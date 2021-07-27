@@ -1142,7 +1142,7 @@ input[type="radio"].checkout-input
 .checkout-item
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1154,6 +1154,16 @@ input[type="radio"].checkout-input
     border-radius: 0.3125rem;
     background-size: contain;
     position: relative;
+}
+
+.checkout-item-quantity
+{
+    position: absolute;
+    border-radius: 50%;
+    background-color: darkgrey;
+    color: white;
+    top: 0;
+    right: 0;
 }
 
 .checkout-item-title
