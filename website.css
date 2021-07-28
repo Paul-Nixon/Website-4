@@ -1137,6 +1137,8 @@ input[type="radio"].checkout-input
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
 }
 
 .checkout-item
@@ -1144,23 +1146,34 @@ input[type="radio"].checkout-input
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.checkout-item + .checkout-item
+{
+    margin-top: 0.5rem;
+}
+
+.checkout-item-img-wrapper
+{
+    position: relative;
 }
 
 .checkout-item-img
 {
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 4.375rem;
+    height: 4.375rem;
     margin-right: 0.5rem;
     border-radius: 0.3125rem;
     background-size: contain;
-    position: relative;
 }
 
 .checkout-item-quantity
 {
     position: absolute;
     border-radius: 50%;
-    background-color: darkgrey;
+    padding: 0.25rem;
+    background-color: #a17f1a;
     color: white;
     top: 0;
     right: 0;
@@ -1168,7 +1181,7 @@ input[type="radio"].checkout-input
 
 .checkout-item-title
 {
-
+    font-size: 1rem;
 }
 
 .checkout-item-price

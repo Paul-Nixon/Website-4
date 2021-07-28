@@ -7,45 +7,9 @@
     <title>Checkout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="website.css">
+    <script src="checkout.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav class="website-links">
-            <div class="internal-links">
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-                <a href="mens.html">Mens</a>
-                <a href="women.html">Women</a>
-            </div>
-            
-            <a href="/" class="brand-name">beauté</a>
-
-            <div class="login-and-cart-wrapper">
-                <a href="login.html" class="login-link">
-                    <i class="fa fa-user"></i>
-                    Login
-                </a>
-
-                <div class="shopping-cart">
-                    <a href="cart.html" class="cart-link">
-                        <i class="fa fa-shopping-cart"></i>
-                        <span class="badge">0</span>
-                    </a>
-
-                    <div class="shopping-cart-dropdown-menu">
-                        <div class="shopping-cart-dropdown-content">
-                            <div class="cart-items-wrapper"></div>
-                            <div class="btn-checkout-wrapper">
-                                <button class="btn btn-checkout">checkout</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <!-- Main Section -->
     <section class="checkout-section">
         <div class="container checkout-container">
@@ -61,7 +25,7 @@
 
                     <div class="input-group">
                         <input type="radio" name="delivery-method" id="shipping" class="checkout-input" checked>
-                        <label for="shipping">Delivery Method</label>
+                        <label for="shipping">Ship Items</label>
                         <input type="radio" name="delivery-method" id="pickup" class="checkout-input">
                         <label for="pickup">Pickup</label>
                     </div>
@@ -77,7 +41,7 @@
 
                     <input type="text" id="address" class="checkout-input" placeholder="Address">
                     <input type="text" id="city" class="checkout-input" placeholder="City">
-                    <input type="text" id="zipCode" class="checkout-input" pattern="[0-9]*"
+                    <input type="text" id="zipCode" class="checkout-input" pattern="[0-9]"
                     placeholder="ZIP code" maxlength="5">
                     <input type="tel" id="telNo" class="checkout-input" placeholder="Phone number"
                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
@@ -87,7 +51,7 @@
                     <label class="checkout-label">Pickup locations</label>
 
                     <div class="input-group">
-                        <input type="radio" name="pickup-location" id="Pearly Gates Plaza" class="checkout-input">
+                        <input type="radio" name="pickup-location" id="Pearly Gates Plaza" class="checkout-input" checked>
                         <label for="Pearly Gates Plaza">Pearly Gates Plaza</label>
                         <input type="radio" name="pickup-location" id="Dalt Wisney Mall" class="checkout-input">
                         <label for="Dalt Wisney Mall">Dalt Wisney Mall</label>
