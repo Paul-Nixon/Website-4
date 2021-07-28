@@ -7,6 +7,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="website.css">
+    <script src="shopping_cart.js" defer></script>
+    <script src="header_menu.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -28,10 +30,10 @@
                 </a>
 
                 <div class="shopping-cart">
-                    <a href="cart.html" class="cart-link">
+                    <div class="cart-and-badge-wrapper">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="badge">0</span>
-                    </a>
+                    </div>
 
                     <div class="shopping-cart-dropdown-menu">
                         <div class="shopping-cart-dropdown-content">
@@ -42,6 +44,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="brand-name-and-bars-wrapper">
+                <h3 class="brand-name">beauté</h3>
+                <i class="fa fa-bars" style="font-size: 1.5625rem;"></i>
+            </div>
+
+            <div class="mobile-links">
+                <a href="/">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="mens.html">Mens</a>
+                <a href="women.html">Women</a>
+                <a id="checkout-link" href="checkout.html">Checkout</a>
             </div>
         </nav>
     </header>
@@ -73,22 +89,22 @@
             <div class="popular-items-wrapper">
                 <div class="popular-item">
                     <img class="img popular-item-img" src="Images/mens-green-tux.jpg">
-                    <h3 class="item-title">men's green tuxedo</h3>
-                    <span class="item-price">$113.75</span>
+                    <h3 class="item-title">Green Suit</h3>
+                    <span class="item-price">$135.99</span>
                     <button class="btn btn-add-to-cart">add to cart</button>
                 </div>
 
                 <div class="popular-item">
                     <img class="img popular-item-img" src="Images/floral-almond-toe-pumps.jpg">
                     <h3 class="item-title">floral almond-toe pumps</h3>
-                    <span class="item-price">$163.38</span>
+                    <span class="item-price">$119.99</span>
                     <button class="btn btn-add-to-cart">add to cart</button>
                 </div>
 
                 <div class="popular-item">
                     <img class="img popular-item-img" src="Images/green-sleeveless-dress.jpg">
                     <h3 class="item-title">green sleeveless dress</h3>
-                    <span class="item-price">$235.99</span>
+                    <span class="item-price">$120.89</span>
                     <button class="btn btn-add-to-cart">add to cart</button>
                 </div>
             </div>
