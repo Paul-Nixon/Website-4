@@ -596,12 +596,12 @@ footer
 
 .men-cta-img
 {
-    background-image: url(Images/cta-mens.jpg);
+    background-image: url(Images/cta-mens-2.jpg);
 }
 
 .women-cta-img
 {
-    background-image: url(Images/cta-women.jpg);
+    background-image: url(Images/cta-women-5.jpg);
 }
 
 .cta-title, .cta-subtitle, .btn-cta
@@ -631,11 +631,6 @@ footer
     background: rgba(255, 255, 255, 0.281);
 }
 
-.popular-items, .shop-by-category
-{
-    padding: 0.5rem;
-}
-
 .popular-items-container, .popular-items-wrapper, .popular-item
 {
     display: flex;
@@ -652,7 +647,7 @@ footer
     width: 80vw;
 }
 
-.popular-items-wrapper, .popular-item, .popular-items-container
+.popular-item, .popular-items-container
 {
     justify-content: center;
 }
@@ -1277,9 +1272,42 @@ input[type="radio"].checkout-input
 
 
 /* Media Styles START */
-@media (max-width: 38.75rem) /* Equivalent to 620px */
+@media (max-width: 65.3125rem) /* Equivalent to 1045px */
 {
     /* index.html Styles START */
+    .popular-items-wrapper
+    {
+        flex-direction: column;
+    }
+
+    .popular-item
+    {
+        width: 70%;
+        height: 50vh;
+    }
+
+    .cards-container
+    {
+        grid-template-columns: repeat(2, 18.75rem);
+        grid-template-rows: repeat(4, 18.75rem);
+    }
+    /* index.html Styles END */
+}
+
+
+@media (max-width: 40rem) /* Equivalent to 620px */
+{
+     /* index.html Styles START */
+     .cards-container
+     {
+         
+     }
+     /* index.html Styles END */
+}
+
+@media (max-width: 38.75rem) /* Equivalent to 620px */
+{
+    /* Header Styles START */
     .website-links
     {
         flex-direction: column;
@@ -1342,7 +1370,8 @@ input[type="radio"].checkout-input
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 1;
     }
-    /* index.html Styles END */
+    /* Header Styles END */
 }
 /* Media Styles END */
