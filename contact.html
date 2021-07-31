@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="website.css">
     <script src="contact.js" defer></script>
+    <script src="header_menu.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -29,10 +30,10 @@
                 </a>
 
                 <div class="shopping-cart">
-                    <a href="cart.html" class="cart-link">
+                    <div class="cart-and-badge-wrapper">
                         <i class="fa fa-shopping-cart"></i>
                         <span class="badge">0</span>
-                    </a>
+                    </div>
 
                     <div class="shopping-cart-dropdown-menu">
                         <div class="shopping-cart-dropdown-content">
@@ -43,6 +44,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="brand-name-and-bars-wrapper">
+                <h3 class="brand-name">beauté</h3>
+                <i class="fa fa-bars" style="font-size: 1.5625rem;"></i>
+            </div>
+
+            <div class="mobile-links">
+                <a href="/">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="mens.html">Mens</a>
+                <a href="women.html">Women</a>
+                <a id="checkout-link" href="checkout.html">Checkout</a>
             </div>
         </nav>
     </header>

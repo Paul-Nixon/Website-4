@@ -1295,12 +1295,46 @@ input[type="radio"].checkout-input
 }
 
 
-@media (max-width: 40rem) /* Equivalent to 620px */
+@media (max-width: 62.5rem) /* Equivalent to 1000px */
+{
+    /* mens.html & women.html Styles START */
+    .shop-container
+    {
+        grid-template-columns: repeat(2, 12.5rem);
+        grid-template-rows: repeat(3, 18.75rem);
+    }
+
+    .shop-items-wrapper .item-title
+    {
+        white-space: nowrap;
+    }
+    /* mens.html & women.html Styles END */
+}
+
+
+@media (max-width: 44.6875rem) /* Equivalent to 715px */
+{
+    /* about.html Styles START */
+    .about-container
+    {
+        height: 100vh;
+    }
+    /* about.html Styles END */
+}
+
+
+@media (max-width: 41.25rem) /* Equivalent to 660px */
 {
      /* index.html Styles START */
      .cards-container
      {
-         
+        grid-template-columns: repeat(2, 12.55rem);
+        grid-template-rows: repeat(4, 12.5rem);
+     }
+
+     .card
+     {
+         height: 12.5rem;
      }
      /* index.html Styles END */
 }
@@ -1373,5 +1407,78 @@ input[type="radio"].checkout-input
         z-index: 1;
     }
     /* Header Styles END */
+}
+
+
+@media (max-width: 33.125rem) /* Equivalent to 530px */
+{
+    /* Footer Styles START */
+    .footer-social-links
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-social-links .fa + .fa
+    {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+    /* Footer Styles END */
+
+
+    /* mens.html & women.html Styles START */
+    .shop-container
+    {
+        grid-template-columns: repeat(2, 9.375rem);
+    }
+
+    .shop-items-wrapper .item-title
+    {
+        font-size: 0.75rem;
+    }
+    /* mens.html & women.html Styles END */
+}
+
+
+@media (max-width: 30.625rem) /* Equivalent to 490px */
+{
+    /* about.html Styles START */
+    .about-section
+    {
+        padding: 1.25rem;
+    }
+
+    .about-pg
+    {
+        font-size: 0.75rem;
+    }
+    /* about.html Styles END */
+}
+
+
+@media (max-width: 28.125rem) /* Equivalent to 450px */
+{
+    /* Footer Styles START */
+    .row
+    {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-col
+    {
+        height: 20%;
+    }
+
+    .footer-col + .footer-col
+    {
+        margin-top: 1.875rem;
+    }
+    /* Footer Styles END */
 }
 /* Media Styles END */
