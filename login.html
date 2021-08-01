@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="website.css">
     <script src="header_menu.js" defer></script>
+    <script src="login.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -38,7 +39,9 @@
                         <div class="shopping-cart-dropdown-content">
                             <div class="cart-items-wrapper"></div>
                             <div class="btn-checkout-wrapper">
-                                <button class="btn btn-checkout">checkout</button>
+                                <a href="checkout.html">
+                                    <button class="btn btn-checkout">checkout</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -70,18 +73,18 @@
 
                 <div class="login-form">
                     <div class="input-wrapper">
-                        <label>login</label>
-                        <input type="text">
+                        <label>email</label>
+                        <input id="loginEmail" type="email">
                     </div>
                     <div class="input-wrapper">
                         <label>password</label>
-                        <input type="password">
+                        <input id="loginPassword" type="password">
                     </div>
                 </div>
 
                 <button class="btn btn-login">sign in</button>
 
-                <a href="#" class="forgot-password-link">forgot password?</a>
+                <a href="forgot_password.html" class="forgot-password-link">forgot password?</a>
             </div>
 
             <!-- Register -->
@@ -91,27 +94,27 @@
                 <div class="register-form">
                     <div class="input-wrapper">
                         <label>first name</label>
-                        <input type="text">
+                        <input id="registerFName" type="text">
                     </div>
 
                     <div class="input-wrapper">
                         <label>last name</label>
-                        <input type="text">
+                        <input id="registerLName" type="text">
                     </div>
 
                     <div class="input-wrapper">
                         <label>email</label>
-                        <input type="text">
+                        <input id="registerEmail" type="email">
                     </div>
 
                     <div class="input-wrapper">
                         <label>password</label>
-                        <input type="password">
+                        <input id="registerPassword" type="password">
                     </div>
                     
                     <div class="input-wrapper">
                         <label>confirm password</label>
-                        <input type="password">
+                        <input id="registerConfirmPassword" type="password">
                     </div>
                 </div>
 
@@ -120,6 +123,9 @@
         </div>
     </section>
 
+    <!-- Modal -->
+    <div class="modal"></div>
+    
     <!-- Footer Section -->
     <footer>
         <div class="container">
