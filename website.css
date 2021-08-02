@@ -279,13 +279,6 @@ a
     border: 1px solid #a17f1a;
 }
 
-.email-error-text, .subject-error-text, .textarea-error-text
-{
-    color: red;
-    display: none;
-    font-size: 0.75rem;
-}
-
 .modal-body p
 {
     margin: 0 0 0.25rem;
@@ -895,6 +888,13 @@ footer
     color: white;
     background-color: transparent;
 }
+
+.email-error-text, .subject-error-text, .textarea-error-text
+{
+    color: red;
+    display: none;
+    font-size: 0.75rem;
+}
 /* contact.html Styles END */
 
 
@@ -993,7 +993,8 @@ footer
     font-size: 1.25rem;
 }
 
-.login-wrapper .section-title, .register-wrapper .section-title, .input-wrapper label, .forgot-password-link
+.login-wrapper .section-title, .register-wrapper .section-title, .input-wrapper label,
+.forgot-password-link
 {
     color: white;
 }
@@ -1012,6 +1013,14 @@ footer
 .input-wrapper label
 {
     font-size: 0.875rem;
+}
+
+.login-email-error-text, .login-password-error-text, .first-name-error-text, .last-name-error-text,
+.register-email-error-text, .register-password-error-text, .register-confirm-password-error-text
+{
+    color: red;
+    display: none;
+    font-size: 0.75rem;
 }
 /* login.html Styles END */
 

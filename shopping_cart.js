@@ -83,7 +83,7 @@ function addToCart(event)
         //
         const cart = JSON.parse(sessionStorage.getItem("cart"));
         cart.push(newCartItem);
-        sessionStorage.setItem("cart", JSON.stringify(cart));
+        
         addToCartDropdownMenu(newCartItem);
     }
 }

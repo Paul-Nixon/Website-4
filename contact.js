@@ -134,7 +134,7 @@ function verifyInputs()
     let subject = document.querySelector("#subject-input").value;
     let textarea = document.querySelector("#textarea-input").value;
 
-    if (parseInt(email.length) === 0 || (!email.includes("@") || !email.includes(".com")))
+    if (email.length === 0 || (!email.includes("@") || !email.includes(".com")))
     {
         // 
         noInvalidInputs = false;
@@ -142,7 +142,7 @@ function verifyInputs()
         document.querySelector(".email-error-text").style.display = "block";
     }
 
-    if (parseInt(subject.length) === 0)
+    if (subject.length === 0)
     {
         //
         noInvalidInputs = false;
@@ -150,7 +150,7 @@ function verifyInputs()
         document.querySelector(".subject-error-text").style.display = "block";
     }
 
-    if (parseInt(textarea.length) === 0)
+    if (textarea.length === 0)
     {
         //
         noInvalidInputs = false;
@@ -170,7 +170,7 @@ function verifyInputs()
 function assignOnChangeEventsToModalInputs()
 {
     document.querySelector("#email-input").onchange = (event) => {
-        if (parseInt(event.target.value.length) === 0 || (!event.target.value.includes("@") || !event.target.value.includes(".com")))
+        if (event.target.value.length === 0 || (!event.target.value.includes("@") || !event.target.value.includes(".com")))
         {
             event.target.style.borderColor = "red";
             document.querySelector(".email-error-text").style.display = "block";
@@ -183,7 +183,7 @@ function assignOnChangeEventsToModalInputs()
     }
 
     document.querySelector("#subject-input").onchange = (event) => {
-        if (parseInt(event.target.value.length) === 0)
+        if (event.target.value.length === 0)
         {
             event.target.style.borderColor = "red";
             document.querySelector(".subject-error-text").style.display = "block";
@@ -196,7 +196,7 @@ function assignOnChangeEventsToModalInputs()
     }
 
     document.querySelector("#textarea-input").onchange = (event) => {
-        if (parseInt(event.target.value.length) === 0)
+        if (event.target.value.length === 0)
         {
             event.target.style.borderColor = "red";
             document.querySelector(".textarea-error-text").style.display = "block";
