@@ -1016,7 +1016,8 @@ footer
 }
 
 .login-email-error-text, .login-password-error-text, .first-name-error-text, .last-name-error-text,
-.register-email-error-text, .register-password-error-text, .register-confirm-password-error-text
+.register-email-error-text, .register-password-error-text, .register-confirm-password-error-text,
+.register-email-exists-error-text
 {
     color: red;
     display: none;
@@ -1025,12 +1026,65 @@ footer
 /* login.html Styles END */
 
 
+/* forgot_password.html Styles START */
+.forgot-password-section
+{
+    background-color: slategrey;
+}
+
+.forgot-password-container, .forgot-password-main-content-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-password-container
+{
+    width: 100%;
+    height: 80vh;
+}
+
+.forgot-password-title
+{
+    font-size: 2.5rem;
+    margin: 0 0 1rem;
+    text-align: center;
+    color: white;
+}
+
+.forgot-password-main-content-wrapper input
+{
+    outline: none;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.btn-get-password
+{
+    background-color: white;
+    border: 2px solid white;
+    font-size: 1.25rem;
+    padding: 0.5em 1em;
+    border-radius: 0.1875rem;
+    margin-top: 1rem;
+    letter-spacing: 0.08125rem;
+}
+
+.btn-get-password:hover
+{
+    color: white;
+    background-color: transparent;
+}
+/* forgot_password.html Styles END */
+
+
 /* mens.html Styles START */
 .mens-shoes, .suits-section, .mens-shirts, .mens-pants
 {
     padding: 2.5rem 1.875rem;
 }
-
 
 .mens-container
 {

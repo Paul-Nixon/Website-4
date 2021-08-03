@@ -177,7 +177,7 @@ function assignOnChangeEventsToModalInputs()
         }
         else
         {
-            event.target.style.borderColor = "black";
+            event.target.style.borderColor = "initial";
             document.querySelector(".email-error-text").style.display = "none";
         }
     }
@@ -190,7 +190,7 @@ function assignOnChangeEventsToModalInputs()
         }
         else
         {
-            event.target.style.borderColor = "black";
+            event.target.style.borderColor = "initial";
             document.querySelector(".subject-error-text").style.display = "none";
         }
     }
@@ -203,7 +203,7 @@ function assignOnChangeEventsToModalInputs()
         }
         else
         {
-            event.target.style.borderColor = "black";
+            event.target.style.borderColor = "initial";
             document.querySelector(".textarea-error-text").style.display = "none";
         }
     }
