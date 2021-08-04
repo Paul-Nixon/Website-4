@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="website.css">
     <script src="header_menu.js" defer></script>
     <script src="login.js" defer></script>
+    <script src="load_cart.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -78,6 +79,9 @@
                         <div class="login-email-error-text">
                             The email field is either empty or contains an invalid email.
                         </div>
+                        <div class="login-email-nonexistent-error-text">
+                            This email doesn't exist in the storage.
+                        </div>
                     </div>
                     <div class="input-wrapper">
                         <label>password</label>
@@ -120,8 +124,8 @@
                         <div class="register-email-error-text">
                             The email field either is empty or doesn't contain "@" or ".com."
                         </div>
-                        <div class="register-email-error-text">
-                            The email field either is empty or doesn't contain "@" or ".com."
+                        <div class="register-email-exists-error-text">
+                            This email already exists in the storage.
                         </div>
                     </div>
 

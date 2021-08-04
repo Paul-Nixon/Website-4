@@ -991,6 +991,12 @@ footer
 {
     padding: 0.5rem;
     font-size: 1.25rem;
+    outline: none;
+}
+
+.input-wrapper input:focus
+{
+    border: 2px solid #a17f1a;
 }
 
 .login-wrapper .section-title, .register-wrapper .section-title, .input-wrapper label,
@@ -1017,9 +1023,9 @@ footer
 
 .login-email-error-text, .login-password-error-text, .first-name-error-text, .last-name-error-text,
 .register-email-error-text, .register-password-error-text, .register-confirm-password-error-text,
-.register-email-exists-error-text
+.register-email-exists-error-text, .login-email-nonexistent-error-text
 {
-    color: red;
+    color: white;
     display: none;
     font-size: 0.75rem;
 }

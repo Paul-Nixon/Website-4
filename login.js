@@ -28,7 +28,7 @@ function ready()
                 <div class="modal-content">
                     <div class="modal-header">
                         <span class="close">&times;</span>
-                        <h2>Item Exists in Cart</h2>
+                        <h2>No Accounts in Storage</h2>
                     </div>
                     <div class="modal-body">
                         <p>
@@ -66,7 +66,7 @@ function registerNewAccount()
         firstName = document.querySelector("#registerFName").value,
         lastName = document.querySelector("#registerLName").value,
         Email = document.querySelector("#registerEmail").value,
-        Password = document.querySelector("#registerEmail").value,
+        Password = document.querySelector("#registerPassword").value,
         newUserAcct = 
         {
             fName: firstName,
@@ -78,6 +78,7 @@ function registerNewAccount()
         customerAccounts.push(newUserAcct);
         sessionStorage.setItem("customerAccounts", JSON.stringify(customerAccounts));
         renderRegisterConfirmationMessage();
+        clearRegisterInputs();
     }
 }
 
@@ -90,28 +91,30 @@ function signIn()
     {
         const modal = document.querySelector(".modal");
 
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Item Exists in Cart</h2>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            This account exists in the storage!
-                        </p>
-                    </div>
-                </div>`;
-            modal.style.display = "block";
-            document.querySelector(".close").addEventListener("click", () => {
+        modal.innerHTML = `
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Account Exists</h2>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        This account exists in the storage!
+                    </p>
+                </div>
+            </div>`;
+        modal.style.display = "block";
+        document.querySelector(".close").addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+        window.onclick = (event) => {
+            if (event.target == modal)
+            {
                 modal.style.display = "none";
-            });
-            window.onclick = (event) => {
-                if (event.target == modal)
-                {
-                    modal.style.display = "none";
-                }
             }
+        }
+
+        clearLoginInputs();
     }
 }
 
@@ -176,10 +179,16 @@ function verifyLoginInputs()
     password = document.querySelector("#loginPassword").value,
     customerAccounts = JSON.parse(sessionStorage.getItem("customerAccounts"));
 
-    if (email.length === 0)
+    if (email.length === 0 || (!email.includes("@") || !email.includes(".com")))
     {
         document.querySelector("#loginEmail").style.borderColor = "red";
         document.querySelector(".login-email-error-text").style.display = "block";
+        return false;
+    }
+    else if (!emailExistsInStorage(email))
+    {
+        document.querySelector("#loginEmail").style.borderColor = "red";
+        document.querySelector(".login-email-nonexistent-error-text").style.display = "block";
         return false;
     }
     else if (password.length === 0)
@@ -211,7 +220,7 @@ function renderRegisterConfirmationMessage()
         <div class="modal-content">
             <div class="modal-header">
                 <span class="close">&times;</span>
-                <h2>Item Exists in Cart</h2>
+                <h2>Account Confirmation</h2>
             </div>
             <div class="modal-body">
                 <p>
@@ -289,7 +298,7 @@ function assignOnChangeEventsToRegisterInputs()
         }
         else
         {
-            document.querySelector("#registerLName").style.borderColor = "initial";
+            document.querySelector("#registerEmail").style.borderColor = "initial";
             document.querySelector(".register-email-error-text").style.display = "none";
             document.querySelector(".register-email-exists-error-text").style.display = "none";
         }
@@ -335,6 +344,7 @@ function assignOnChangeEventsToLoginInputs()
         {
             document.querySelector("#loginEmail").style.borderColor = "initial";
             document.querySelector(".login-email-error-text").style.display = "none";
+            document.querySelector(".login-email-nonexistent-error-text").style.display = "none";
         }
     };
 
@@ -350,4 +360,21 @@ function assignOnChangeEventsToLoginInputs()
             document.querySelector(".login-password-error-text").style.display = "none";
         }
     };
+}
+
+
+function clearRegisterInputs()
+{
+    document.querySelector("#registerFName").value = "";
+    document.querySelector("#registerLName").value = "";
+    document.querySelector("#registerEmail").value = "";
+    document.querySelector("#registerPassword").value = "";
+    document.querySelector("#registerConfirmPassword").value = "";
+}
+
+
+function clearLoginInputs()
+{
+    document.querySelector("#loginEmail").value = "";
+    document.querySelector("#loginPassword").value = "";
 }

@@ -7,25 +7,16 @@ else
     ready();
 }
 
-
+/*
+    Function ready() adds an event listener to the Purchase button, calls addEventListenersToInputs() to
+    add an onchange event to each of the form's inputs, and calls renderCheckoutItems(tax) to render each
+    of the user's cart items on the webpage.
+    Precondition: The webpage's fully rendered.
+    Postcondition: Event listeners are added to the Purchase button & the form's inputs, and all the user's
+    cart items are rendered on the webpage.
+*/
 function ready()
 {
-    document.querySelector("#shipping").onchange = (event) => {
-        if (event.target.checked)
-        {
-            document.querySelector(".shipping-address-form").style.display = "block";
-            document.querySelector(".pickup-locations").style.display = "none";
-            document.querySelector(".delivery-method-label").innerText = "Shipping";
-        }
-    };
-    document.querySelector("#pickup").onchange = (event) => {
-        if (event.target.checked)
-        {
-            document.querySelector(".shipping-address-form").style.display = "none";
-            document.querySelector(".pickup-locations").style.display = "block";
-            document.querySelector(".delivery-method-label").innerText = "Pick-up";
-        }
-    };
     document.querySelector(".btn-purchase").addEventListener("click", () => {
         if (document.querySelector(".shipping-address-form").style.display != "none")
         {
@@ -48,7 +39,11 @@ function ready()
     renderCheckoutItems(tax);
 }
 
-
+/*
+    Function renderCheckoutItems(tax) .
+    Precondition: The webpage's fully rendered.
+    Postcondition: All the user's cart items are rendered on the webpage.
+*/
 function renderCheckoutItems(tax)
 {
     const cartItems = JSON.parse(sessionStorage.getItem("cart"));
@@ -74,7 +69,11 @@ function renderCheckoutItems(tax)
     document.querySelector(".total-price").innerText = "$" + (total + tax).toFixed(2);
 }
 
-
+/*
+    Function renderConfirmationMessage() .
+    Precondition: .
+    Postcondition: .
+*/
 function renderConfirmationMessage()
 {
     const modal = document.querySelector(".modal");
@@ -97,7 +96,11 @@ function renderConfirmationMessage()
     modal.style.display = "block";
 }
 
-
+/*
+    Function validateInputs() .
+    Precondition: .
+    Postcondition: .
+*/
 function validateInputs()
 {
     if (document.querySelector("#email").validity.typeMismatch)
@@ -135,7 +138,11 @@ function validateInputs()
     }
 }
 
-
+/*
+    Function addEventListenersToInputs() .
+    Precondition: .
+    Postcondition: .
+*/
 function addEventListenersToInputs()
 {
     document.querySelector("#email").onchange = (event) => {
@@ -148,6 +155,7 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
     document.querySelector("#firstName").onchange = (event) => {
         if (event.target.value.length === 0)
         {
@@ -158,6 +166,7 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
     document.querySelector("#lastName").onchange = (event) => {
         if (event.target.value.length === 0)
         {
@@ -168,6 +177,7 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
     document.querySelector("#address").onchange = (event) => {
         if (event.target.value.length === 0)
         {
@@ -178,6 +188,7 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
     document.querySelector("#city").onchange = (event) => {
         if (event.target.value.length === 0)
         {
@@ -189,6 +200,7 @@ function addEventListenersToInputs()
             event.target.setCustomValidity("");
         }
     };
+
     document.querySelector("#zipCode").onchange = (event) => {
         if (event.target.value.length !== 5 || isNaN(event.target.value))
         {
@@ -199,6 +211,7 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
     document.querySelector("#telNo").onchange = (event) => {
         if (event.target.value.length === 0)
         {
@@ -209,9 +222,31 @@ function addEventListenersToInputs()
             event.target.style.backgroundColor = "white";
         }
     };
+
+    document.querySelector("#shipping").onchange = (event) => {
+        if (event.target.checked)
+        {
+            document.querySelector(".shipping-address-form").style.display = "block";
+            document.querySelector(".pickup-locations").style.display = "none";
+            document.querySelector(".delivery-method-label").innerText = "Shipping";
+        }
+    };
+
+    document.querySelector("#pickup").onchange = (event) => {
+        if (event.target.checked)
+        {
+            document.querySelector(".shipping-address-form").style.display = "none";
+            document.querySelector(".pickup-locations").style.display = "block";
+            document.querySelector(".delivery-method-label").innerText = "Pick-up";
+        }
+    };
 }
 
-
+/*
+    Function renderErrorMessage(switchValue) .
+    Precondition: .
+    Postcondition: .
+*/
 function renderErrorMessage(switchValue)
 {
     const modal = document.querySelector(".modal");
