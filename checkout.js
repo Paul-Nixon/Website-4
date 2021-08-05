@@ -18,11 +18,13 @@ else
 function ready()
 {
     document.querySelector(".btn-purchase").addEventListener("click", () => {
+        const email = document.querySelector("#email").value;
+        
         if (document.querySelector(".shipping-address-form").style.display != "none")
         {
             validateInputs();
         }
-        else if (document.querySelector("#email").validity.typeMismatch)
+        else if (email.length === 0 || (!email.includes("@") || !email.includes(".com")))
         {
             renderErrorMessage(1);
         }
@@ -40,7 +42,7 @@ function ready()
 }
 
 /*
-    Function renderCheckoutItems(tax) .
+    Function renderCheckoutItems(tax) renders the user's cart items' respective info on the webpage.
     Precondition: The webpage's fully rendered.
     Postcondition: All the user's cart items are rendered on the webpage.
 */
@@ -70,9 +72,9 @@ function renderCheckoutItems(tax)
 }
 
 /*
-    Function renderConfirmationMessage() .
-    Precondition: .
-    Postcondition: .
+    Function renderConfirmationMessage() renders a modal confirming to the user their purchase is completed.
+    Precondition: The user clicked the Purchase button and all the inputs were filled correctly.
+    Postcondition: A modal is rendered confirming to the user their purchase is completed.
 */
 function renderConfirmationMessage()
 {
@@ -97,13 +99,16 @@ function renderConfirmationMessage()
 }
 
 /*
-    Function validateInputs() .
-    Precondition: .
-    Postcondition: .
+    Function validateInputs() validates each of the form's inputs.
+    Precondition: The user clicked the Purchase button.
+    Postcondition: If all the form's inputs were correctly filled, renderConfirmationMessage() is called to
+    inform the reader their purchase was successful. Otherwise, a number is passed to
+    renderErrorMessage(switchValue) which renders an error message corresponding to the incorrectly filled
+    input.
 */
 function validateInputs()
 {
-    if (document.querySelector("#email").validity.typeMismatch)
+    if (document.querySelector("#email").value.length === 0 || (document.querySelector("#email").value.includes("@") || !document.querySelector("#email").value.includes(".com")))
     {
         renderErrorMessage(1);
     }
@@ -123,7 +128,7 @@ function validateInputs()
     {
         renderErrorMessage(5);
     }
-    else if (document.querySelector("#zipCode").value.length === 0)
+    else if (document.querySelector("#zipCode").value.length !== 5 || isNaN(document.querySelector("#zipCode").value))
     {
         renderErrorMessage(6);
     }
@@ -139,14 +144,14 @@ function validateInputs()
 }
 
 /*
-    Function addEventListenersToInputs() .
-    Precondition: .
-    Postcondition: .
+    Function addEventListenersToInputs() adds an onchange event to each of the form's inputs for input validation.
+    Precondition: The webpage's fully rendered.
+    Postcondition: Each input has an onchange event which validates its value.
 */
 function addEventListenersToInputs()
 {
     document.querySelector("#email").onchange = (event) => {
-        if (event.target.validity.typeMismatch)
+        if (event.target.value.length === 0 || (!event.target.value.includes("@") || !event.target.value.includes(".com")))
         {
             event.target.style.backgroundColor = "red";
         }
@@ -243,9 +248,10 @@ function addEventListenersToInputs()
 }
 
 /*
-    Function renderErrorMessage(switchValue) .
-    Precondition: .
-    Postcondition: .
+    Function renderErrorMessage(switchValue) renders a modal telling the user what error they made on one of the
+    form's inputs.
+    Precondition: The user clicked the Purchase button.
+    Postcondition: A modal is rendered which explains the error a user made on an input.
 */
 function renderErrorMessage(switchValue)
 {

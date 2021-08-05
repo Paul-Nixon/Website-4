@@ -7,7 +7,13 @@ else
     ready();
 }
 
-
+/*
+    Function ready() creates a cart in storage if it doesn't exist (calls loadCart() otherwise) and
+    adds a mouseover & mouseout event listener to the header's cart.
+    Precondition: The webpage's fully rendered.
+    Postcondition: Either the cart is created in storage or loadCart() is called, and the header's cart contains
+    a mouseover & mouseout event.
+*/
 function ready()
 {
     if (sessionStorage.getItem("cart") == null)
@@ -30,7 +36,13 @@ function ready()
     });
 }
 
-
+/*
+    Function loadCart() either writes text in the header's cart's dropdown menu notifying the user there're no
+    items in it or renders each of the cart's items in the dropdown menu.
+    Precondition: The webpage's fully rendered.
+    Postcondition: The header's cart's dropdown menu contains either text indicating the cart has no items or
+    each item's info.
+*/
 function loadCart()
 {
     //
@@ -79,7 +91,12 @@ function loadCart()
     }
 }
 
-
+/*
+    Function updateItemQuantity(event) updates the input's respective cart item's quantity and total price.
+    Precondition: In the header's cart's dropdown menu, a cart item's input was updated.
+    Postcondition: If the cart item's input was updated to zero, removeCartItem(event) is called to
+    remove it from the dropdown menu. Otherwise, it's quantity and total price is updated.
+*/
 function updateItemQuantity(event)
 {
     const cartItems = JSON.parse(sessionStorage.getItem("cart")),
@@ -96,7 +113,11 @@ function updateItemQuantity(event)
     }
 }
 
-
+/*
+    Function removeCartItem(event) removes a cart item from storage and the header's cart's dropdown menu.
+    Precondition: In the header's cart's dropdown menu, a cart item's input was updated to zero.
+    Postcondition: A cart item is removed from storage and the header's cart's dropdown menu.
+*/
 function removeCartItem(event)
 {
     //

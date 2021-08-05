@@ -7,7 +7,13 @@ else
     ready();
 }
 
-
+/*
+    Function ready() creates a cart in storage if it doesn't exist (calls loadCart() otherwise) and
+    adds a mouseover & mouseout event listener to the header's cart.
+    Precondition: The webpage's fully rendered.
+    Postcondition: Either the cart is created in storage or loadCart() is called, and the header's cart contains
+    a mouseover & mouseout event.
+*/
 function ready()
 {
     //
@@ -35,7 +41,14 @@ function ready()
     });
 }
 
-
+/*
+    Function addToCart(event) adds an item's info to the cart if it doesn't exist, and calls
+    addToCartDropdownMenu(newCartItem) to render it in the header's cart's dropdown menu.
+    Precondition: An Add to Cart button is clicked.
+    Postcondition: If the item doesn't exist in the cart, then it's added to it and rendered in the
+    header's cart's dropdown menu. Otherwise, a modal is rendered notifying the user that it already exists
+    in the cart.
+*/
 function addToCart(event)
 {
     //
@@ -88,7 +101,12 @@ function addToCart(event)
     }
 }
 
-
+/*
+    Function itemExistsInCart(itemName) searches for an item in the cart by using it's name. If it's in
+    the cart, then the function returns true, false otherwise.
+    Precondition: An Add to Cart button is clicked.
+    Postcondition: If the item exists in the cart, then the function returns true, false otherwise.
+*/
 function itemExistsInCart(itemName)
 {
     //
@@ -110,7 +128,14 @@ function itemExistsInCart(itemName)
     }
 }
 
-
+/*
+    Function loadCart() either writes text in the header's cart's dropdown menu notifying the user there're no
+    items in it or renders each of the cart's items in the dropdown menu.
+    Precondition: The webpage's fully rendered and the cart exists in storage.
+    Postcondition: If the cart contains no items, then header's cart's dropdown menu will contain text telling the
+    user that there're no items in the cart. Else, each cart item's info is rendered in the header's cart's
+    dropdown menu.
+*/
 function loadCart()
 {
     //
@@ -158,7 +183,11 @@ function loadCart()
     }
 }
 
-
+/*
+    Function removeCartItem(event) removes a cart item from storage and the header's cart's dropdown menu.
+    Precondition: In the header's cart's dropdown menu, a cart item's input was updated to zero.
+    Postcondition: A cart item is removed from storage and the header's cart's dropdown menu.
+*/
 function removeCartItem(event)
 {
     //
@@ -187,7 +216,12 @@ function removeCartItem(event)
     }
 }
 
-
+/*
+    Function addToCartDropdownMenu(newCartItem) renders a new cart item's info to the header's cart's
+    dropdown menu.
+    Precondition: An Add to Cart button is clicked.
+    Postcondition: A new cart item's info is rendered in the header's cart's dropdown menu.
+*/
 function addToCartDropdownMenu(newCartItem)
 {
     if (document.querySelector(".btn-checkout-wrapper").style.display === "none")
@@ -250,7 +284,12 @@ function addToCartDropdownMenu(newCartItem)
     document.querySelector(".cart-items-wrapper").appendChild(cartItemContainer);
 }
 
-
+/*
+    Function updateItemQuantity(event) updates the input's respective cart item's quantity and total price.
+    Precondition: In the header's cart's dropdown menu, a cart item's input was updated.
+    Postcondition: If the cart item's input was updated to zero, removeCartItem(event) is called to
+    remove it from the dropdown menu. Otherwise, it's quantity and total price is updated.
+*/
 function updateItemQuantity(event)
 {
     const cartItems = JSON.parse(sessionStorage.getItem("cart")),

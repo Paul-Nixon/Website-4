@@ -7,7 +7,12 @@ else
     ready();
 }
 
-
+/*
+    Function ready() adds an event listener to the Get Password button which validates the webpage's input.
+    Precondition: The webpage's fully rendered.
+    Postcondition: If the input contains an error, a modal will render explaining what's wrong w/its value.
+    Otherwise, getPassword() is called to find the user's password.
+*/
 function ready()
 {
     document.querySelector(".btn-get-password").addEventListener("click", () => {
@@ -72,7 +77,13 @@ function ready()
     });
 }
 
-
+/*
+    Function getPassword() searches through the array of customer accounts until it finds the password
+    corresponding to the email entered in the input.
+    Precondition: The user clicked the Get Password button and the webpage's input was correctly filled.
+    Postcondition: Once the password is found, it's passed to renderPassword(password) to 
+    render it in a modal.
+*/
 function getPassword()
 {
     const email = document.querySelector("#emailInput").value,
@@ -88,7 +99,13 @@ function getPassword()
     }
 }
 
-
+/*
+    Function renderPassword() renders the password received from getPassword() in a modal.
+    Precondition: The password corresponding to the email given in the webpage's input was found and
+    passed to this function.
+    Postcondition: A modal is rendered displaying the password corresponding to the email given
+    in the webpage's input.
+*/
 function renderPassword(password)
 {
     const modal = document.querySelector(".modal");
@@ -117,7 +134,12 @@ function renderPassword(password)
     }
 }
 
-
+/*
+    Function emailExistsInStorage(email) searches for the email given in the webpage's input to see if it's
+    in storage.
+    Precondition: The user clicked the Get Password button.
+    Postcondition: If the email exists in storage, the function returns true. Otherwise, it returns false.
+*/
 function emailExistsInStorage(email)
 {
     const customerAccounts = JSON.parse(sessionStorage.getItem("customerAccounts"));
