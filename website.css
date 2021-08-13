@@ -1270,8 +1270,8 @@ input[type="radio"].checkout-input
     padding: 0.25rem;
     background-color: #a17f1a;
     color: white;
-    top: 0;
-    right: 0;
+    top: -3px;
+    right: -5px;
 }
 
 .checkout-item-title

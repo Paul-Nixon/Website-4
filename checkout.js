@@ -67,7 +67,7 @@ function renderCheckoutItems(tax)
         document.querySelector(".checkout-items-wrapper").appendChild(cartItemContainer);
     }
 
-    document.querySelector(".subtotal").innerText = "$" + total;
+    document.querySelector(".subtotal").innerText = "$" + total.toFixed(2);
     document.querySelector(".total-price").innerText = "$" + (total + tax).toFixed(2);
 }
 
@@ -108,7 +108,7 @@ function renderConfirmationMessage()
 */
 function validateInputs()
 {
-    if (document.querySelector("#email").value.length === 0 || (document.querySelector("#email").value.includes("@") || !document.querySelector("#email").value.includes(".com")))
+    if (document.querySelector("#email").value.length === 0 || (!document.querySelector("#email").value.includes("@") || !document.querySelector("#email").value.includes(".com")))
     {
         renderErrorMessage(1);
     }
