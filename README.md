@@ -1,7 +1,7 @@
 # **Description**
 This project is the 4th website-project I've created, built by implementing HTML5, CSS3, & JavaScript.
 
-After finishing this project, compared to the others, I'm certain I put the most effort into this one. I highly recommend checking out the [https://youtu.be/lXrA-2tBXts](Youtube video) I made where I discuss each webpage's layout, my thought process while creating them, & what inspired their design. (Make sure you like and share the video if you enjoy it. I need all the exposure I can get, and I'll continue making videos if it gets an unexpected amount of support). As always, I hope anyone who views the project enjoys it & respects the effort I put in building it.<br></br>
+After finishing this project, compared to the others, I'm certain I put the most effort into this one. I highly recommend checking out the [Youtube video](https://youtu.be/lXrA-2tBXts) I made where I discuss each webpage's layout, my thought process while creating them, & what inspired their design. (Make sure you like and share the video if you enjoy it. I need all the exposure I can get, and I'll continue making videos if it gets an unexpected amount of support). As always, I hope anyone who views the project enjoys it & respects the effort I put in building it.<br></br>
 
 # **Screenshots**
 ## **Desktop**
